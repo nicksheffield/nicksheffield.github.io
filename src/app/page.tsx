@@ -1,101 +1,284 @@
-import Image from "next/image";
+import { ThemeSwitch } from '@/components/ThemeSwitch'
+import {
+	Card,
+	CardContent,
+	CardFooter,
+	CardHeader,
+	CardTitle,
+} from '@/components/ui/card'
+import { GithubIcon, LinkedinIcon, MailIcon, PhoneIcon } from 'lucide-react'
+import Image from 'next/image'
+
+const workExperience = [
+	{
+		company: 'Applicable Ltd',
+		role: 'Project Lead Developer',
+		dates: '2017 - 2024',
+		descriptions: [
+			'Developed and maintained web applications using React.js, React Native, Ember and Java.',
+			'Learned Java and later Kotlin to work on an Android app for documenting Firestopping, used by two large NZ universities.',
+			'Led a team of up to 3 developers on a web application for handling legal disputes.',
+			'Created a code generator for speeding up development of full-stack react/node.js projects.',
+		],
+	},
+	{
+		company: 'Yoobee School of Design',
+		role: 'Lecturer',
+		dates: '2012 - 2017',
+		descriptions: [
+			'Taught web development to students studying a Diploma of Web Development.',
+			'Continually improved the curriculum to keep up with modern web development practices.',
+			'Introduced new technologies and frameworks to the curriculum.',
+			'Taught JavaScript, HTML, CSS, PHP, MySQL, and Git.',
+		],
+	},
+	{
+		company: 'The Web Company',
+		role: 'Web Developer',
+		dates: '2011 - 2012',
+		descriptions: [
+			'Developed websites using HTML, CSS, JavaScript, and PHP.',
+			"Applied many updates to existing clients websites, which were created using a myriad of frameworks and CMS's.",
+			'Created and maintained multiple wordpress sites.',
+			'Did some work on Magento e-commerce sites.',
+		],
+	},
+]
+
+const stack = [
+	'React',
+	'Node',
+	'TypeScript',
+	'JavaScript',
+	'GraphQL',
+	'Express',
+	'Hono',
+	'HTML',
+	'CSS',
+	'Git',
+	'Tailwind',
+	'Next',
+	'MySQL',
+]
+
+const projects = [
+	{
+		name: 'Kaizen',
+		description:
+			'A code generator used for quickly designing database structures, and creating a ready-to-go back end api with full auth and crud.',
+		technologies: [
+			'React',
+			'Node.js',
+			'Hono',
+			'GraphQL',
+			'better-auth',
+			'Turborepo',
+		],
+	},
+	{
+		name: 'XPO Showtime',
+		description:
+			'An internal web app for managing trade show registrations and exhibitor bookings. Used Kaizen to generate the back end.',
+		technologies: ['React', 'Shadcn/ui', 'TypeScript', 'GraphQL', 'MySQL'],
+	},
+	{
+		name: 'ICRA',
+		description:
+			'A web app for managing meetings in the alternative dispute resolution industry.',
+		technologies: ['React', 'Tailwind CSS', 'TypeScript'],
+	},
+	{
+		name: 'Resolutionary',
+		description:
+			'An internal web app for managing multiple legal dispute resolution services.',
+		technologies: ['React', 'Tailwind CSS', 'TypeScript'],
+	},
+	{
+		name: 'Falcon Grey',
+		description:
+			'An Android app for documenting firestopping work offline.',
+		technologies: ['Java', 'Kotlin', 'Android'],
+	},
+	{
+		name: 'JAWS',
+		description:
+			'An internal web app for managing truck deliveries and invoicing.',
+		technologies: ['Ember', 'Sass'],
+	},
+]
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+	return (
+		<div className="min-h-screen p-8 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+			<div className="fixed top-4 right-4">
+				<ThemeSwitch />
+			</div>
+			<main className="flex flex-col gap-12 mx-auto max-w-2xl">
+				<div className="flex items-center justify-between gap-2">
+					<div className="flex flex-col gap-2">
+						<div className="text-3xl font-bold">Nick Sheffield</div>
+						<div className="text-lg">Software Engineer</div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+						<div className="flex gap-4 mt-1">
+							<div>
+								<a
+									href="https://github.com/nicksheffield"
+									className="text-muted-foreground text-sm"
+								>
+									<GithubIcon className="size-4" />
+								</a>
+							</div>
+							<div>
+								<a
+									href="https://linkedin.com/in/nicksheffield"
+									className="text-muted-foreground text-sm"
+								>
+									<LinkedinIcon className="size-4" />
+								</a>
+							</div>
+							<div>
+								<a
+									href="mailto:nick@nicksheffield.com"
+									className="text-muted-foreground text-sm flex items-center gap-2"
+								>
+									<MailIcon className="size-4" />
+									numbereft@gmail.com
+								</a>
+							</div>
+							<div className="text-muted-foreground text-sm flex items-center gap-2">
+								<PhoneIcon className="size-4" />
+								0211099442
+							</div>
+						</div>
+					</div>
+					<div className="rounded-lg overflow-hidden">
+						<Image
+							src="/nick.jpg"
+							alt="Nick Sheffield"
+							width={100}
+							height={100}
+						/>
+					</div>
+				</div>
+
+				<div className="flex flex-col gap-4">
+					<div className="text-xl font-bold">About</div>
+					<div className="flex flex-col gap-2">
+						<p className="text-muted-foreground text-sm">
+							I am a seasoned front-end software developer with 16
+							years of coding experience, specializing in React.js
+							and Node.js. My passion for technology drives me to
+							constantly expand my skill set, ensuring I stay at
+							the forefront of a rapidly evolving industry.
+						</p>
+						<p className="text-muted-foreground text-sm">
+							I am quick to learn new tools and technologies,
+							continuously teaching myself to adapt to modern
+							development practices and standards. With a deep
+							commitment to quality and innovation, I bring a
+							proactive, detail-oriented approach to every
+							project, always aiming to create seamless,
+							user-friendly digital experiences.
+						</p>
+					</div>
+				</div>
+
+				<div className="flex flex-col gap-4">
+					<div className="text-xl font-bold">Work Experience</div>
+					<div className="flex flex-col gap-6">
+						{workExperience.map((experience) => (
+							<div
+								key={experience.company}
+								className="flex flex-col gap-2"
+							>
+								<div className="flex justify-between">
+									<div className="flex flex-col gap-2">
+										<div className="">
+											{experience.role}
+											<span className="text-sm text-muted-foreground">
+												{' '}
+												@ {experience.company}
+											</span>
+										</div>
+									</div>
+									<div className="text-muted-foreground text-sm">
+										{experience.dates}
+									</div>
+								</div>
+								<div className="flex flex-col">
+									{experience.descriptions.map(
+										(description) => (
+											<p
+												key={description}
+												className="text-muted-foreground text-sm"
+											>
+												{description}
+											</p>
+										)
+									)}
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<div className="flex flex-col gap-4">
+					<div className="text-xl font-bold">Stack</div>
+
+					<div className="text-muted-foreground text-sm">
+						Below is a non-exhaustive list of technologies and
+						skills I am currently focused on.
+					</div>
+
+					<div className="flex flex-col gap-2">
+						<div className="flex flex-wrap gap-2">
+							{stack.map((technology) => (
+								<div
+									className="bg-muted rounded-full font-medium flex items-center gap-2 px-3 py-1 text-sm"
+									key={technology}
+								>
+									{/* <ChevronRightIcon className="size-4 shrink-0" /> */}
+									{technology}
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+
+				<div className="flex flex-col gap-4">
+					<div className="text-xl font-bold">Projects</div>
+
+					<div className="grid grid-cols-2 gap-4 -mx-6">
+						{projects.map((project) => (
+							<Card key={project.name}>
+								<CardHeader>
+									<CardTitle>{project.name}</CardTitle>
+								</CardHeader>
+								<CardContent>
+									<div className="text-muted-foreground text-sm">
+										{project.description}
+									</div>
+								</CardContent>
+								<CardFooter>
+									<div className="flex gap-2 flex-wrap">
+										{project.technologies.map(
+											(technology) => (
+												<div
+													key={technology}
+													className="flex items-center gap-1 py-0.5 px-2 font-medium text-xs rounded-full bg-muted"
+												>
+													{/* <ChevronRightIcon className="size-3" /> */}
+													{technology}
+												</div>
+											)
+										)}
+									</div>
+								</CardFooter>
+							</Card>
+						))}
+					</div>
+				</div>
+			</main>
+		</div>
+	)
 }
