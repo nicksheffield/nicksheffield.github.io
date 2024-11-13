@@ -6,7 +6,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from '@/components/ui/card'
-import { GithubIcon, LinkedinIcon, MailIcon, PhoneIcon } from 'lucide-react'
+import { GithubIcon, MailIcon, PhoneIcon } from 'lucide-react'
 import Image from 'next/image'
 
 const workExperience = [
@@ -120,35 +120,36 @@ export default function Home() {
 						<div className="text-lg">Software Engineer</div>
 
 						<div className="flex gap-4 mt-1">
-							<div>
-								<a
-									href="https://github.com/nicksheffield"
-									className="text-muted-foreground text-sm"
-								>
-									<GithubIcon className="size-4" />
-								</a>
-							</div>
-							<div>
-								<a
-									href="https://linkedin.com"
-									className="text-muted-foreground text-sm"
-								>
-									<LinkedinIcon className="size-4" />
-								</a>
-							</div>
-							<div>
-								<a
-									href="mailto:nick@nicksheffield.com"
-									className="text-muted-foreground text-sm flex items-center gap-2"
-								>
-									<MailIcon className="size-4" />
-									numbereft@gmail.com
-								</a>
-							</div>
-							<div className="text-muted-foreground text-sm flex items-center gap-2">
+							<a
+								href="https://github.com/nicksheffield"
+								className="text-muted-foreground text-sm"
+							>
+								<GithubIcon className="size-4" />
+								nicksheffield
+							</a>
+
+							{/* <a
+								href="https://linkedin.com"
+								className="text-muted-foreground text-sm"
+							>
+								<LinkedinIcon className="size-4" />
+							</a> */}
+
+							<a
+								href="mailto:nick@nicksheffield.com"
+								className="text-muted-foreground text-sm flex items-center gap-2"
+							>
+								<MailIcon className="size-4" />
+								numbereft@gmail.com
+							</a>
+
+							<a
+								href="tel:+64211099442"
+								className="text-muted-foreground text-sm flex items-center gap-2"
+							>
 								<PhoneIcon className="size-4" />
-								0211099442
-							</div>
+								+64211099442
+							</a>
 						</div>
 					</div>
 					<div className="rounded-lg overflow-hidden">
