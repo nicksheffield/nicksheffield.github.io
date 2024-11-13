@@ -130,7 +130,7 @@ export default function Home() {
 							</div>
 							<div>
 								<a
-									href="https://linkedin.com/in/nicksheffield"
+									href="https://linkedin.com"
 									className="text-muted-foreground text-sm"
 								>
 									<LinkedinIcon className="size-4" />
