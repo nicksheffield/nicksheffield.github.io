@@ -237,7 +237,7 @@ export default function Home() {
 						<div className="flex flex-wrap gap-2">
 							{stack.map((technology) => (
 								<div
-									className="bg-muted rounded-full font-medium flex items-center gap-2 px-3 py-1 text-sm"
+									className="bg-black/5 hover:bg-black/10 transition-all duration-300 rounded-full font-medium flex items-center gap-2 px-3 py-1 text-sm"
 									key={technology}
 								>
 									{/* <ChevronRightIcon className="size-4 shrink-0" /> */}
@@ -253,7 +253,10 @@ export default function Home() {
 
 					<div className="grid grid-cols-2 gap-4 -mx-6">
 						{projects.map((project) => (
-							<Card key={project.name}>
+							<Card
+								key={project.name}
+								className="hover:bg-muted hover:scale-105 transition-all duration-300"
+							>
 								<CardHeader>
 									<CardTitle>{project.name}</CardTitle>
 								</CardHeader>
@@ -268,7 +271,7 @@ export default function Home() {
 											(technology) => (
 												<div
 													key={technology}
-													className="flex items-center gap-1 py-0.5 px-2 font-medium text-xs rounded-full bg-muted"
+													className="flex items-center gap-1 py-0.5 px-2 font-medium text-xs rounded-full bg-black/5 hover:bg-black/10 transition-all duration-300"
 												>
 													{/* <ChevronRightIcon className="size-3" /> */}
 													{technology}
