@@ -13,18 +13,19 @@ const workExperience = [
 	{
 		company: 'Applicable Ltd',
 		role: 'Project Lead Developer',
-		dates: '2017 - 2024',
+		dates: 'Jul 2017 - Nov 2024',
 		descriptions: [
 			'Developed and maintained web applications using React.js, React Native, Ember and Java.',
-			'Learned Java and later Kotlin to work on an Android app for documenting Firestopping, used by two large NZ universities.',
-			'Led a team of up to 3 developers on a web application for handling legal disputes.',
+			'Learned Java and Kotlin for an Android app for documenting fire stopping work, which was used by two large NZ universities.',
+			'Led a team of developers on a web application for handling legal disputes.',
 			'Created a code generator for speeding up development of full-stack react/node.js projects.',
+			'Coached junior developers on best practices and improving their programming skills.',
 		],
 	},
 	{
 		company: 'Yoobee School of Design',
 		role: 'Lecturer',
-		dates: '2012 - 2017',
+		dates: 'Jan 2012 - Jul 2017',
 		descriptions: [
 			'Taught web development to students studying a Diploma of Web Development.',
 			'Continually improved the curriculum to keep up with modern web development practices.',
@@ -35,7 +36,7 @@ const workExperience = [
 	{
 		company: 'The Web Company',
 		role: 'Web Developer',
-		dates: '2011 - 2012',
+		dates: 'Jun 2011 - Dec 2011',
 		descriptions: [
 			'Developed websites using HTML, CSS, JavaScript, and PHP.',
 			"Applied many updates to existing clients websites, which were created using a myriad of frameworks and CMS's.",
@@ -117,23 +118,16 @@ export default function Home() {
 				<div className="flex items-center justify-between gap-2">
 					<div className="flex flex-col gap-2">
 						<div className="text-3xl font-bold">Nick Sheffield</div>
-						<div className="text-lg">Software Engineer</div>
+						<div className="text-lg">Web Software Engineer</div>
 
-						<div className="flex gap-4 mt-1">
+						<div className="flex gap-6 mt-1">
 							<a
 								href="https://github.com/nicksheffield"
-								className="text-muted-foreground text-sm"
+								className="text-muted-foreground text-sm flex items-center gap-2"
 							>
 								<GithubIcon className="size-4" />
 								nicksheffield
 							</a>
-
-							{/* <a
-								href="https://linkedin.com"
-								className="text-muted-foreground text-sm"
-							>
-								<LinkedinIcon className="size-4" />
-							</a> */}
 
 							<a
 								href="mailto:nick@nicksheffield.com"
@@ -154,7 +148,7 @@ export default function Home() {
 					</div>
 					<div className="rounded-lg overflow-hidden">
 						<Image
-							src="/nick.jpg"
+							src="/nick.png"
 							alt="Nick Sheffield"
 							width={100}
 							height={100}
@@ -168,17 +162,18 @@ export default function Home() {
 						<p className="text-muted-foreground text-sm">
 							I am a seasoned front-end software developer with 16
 							years of coding experience, specializing in React.js
-							and Node.js. My passion for technology drives me to
-							constantly expand my skill set, ensuring I stay at
-							the forefront of a rapidly evolving industry.
+							and Node.js. I have a passion for learning that
+							drives me to constantly expand my skill set,
+							ensuring I stay at the forefront of this rapidly
+							evolving industry.
 						</p>
 						<p className="text-muted-foreground text-sm">
 							I am quick to learn new tools and technologies,
 							continuously teaching myself to adapt to modern
-							development practices and standards. With a deep
-							commitment to quality and innovation, I bring a
-							proactive, detail-oriented approach to every
-							project, always aiming to create seamless,
+							development practices and standards. I have a
+							proactive, detail-oriented approach and a deep
+							commitment to quality and innovation, which I bring
+							to every project, always aiming to create seamless,
 							user-friendly digital experiences.
 						</p>
 					</div>
@@ -206,18 +201,25 @@ export default function Home() {
 										{experience.dates}
 									</div>
 								</div>
-								<div className="flex flex-col">
-									{experience.descriptions.map(
-										(description) => (
-											<p
-												key={description}
-												className="text-muted-foreground text-sm"
-											>
-												{description}
-											</p>
-										)
-									)}
+								<div>
+									<ul className="list-disc list-inside">
+										{experience.descriptions.map(
+											(description) => (
+												<li
+													key={description}
+													className="text-muted-foreground text-sm"
+												>
+													{description}
+												</li>
+											)
+										)}
+									</ul>
 								</div>
+								{/* <div className="flex flex-col">
+									<p className="text-muted-foreground text-sm">
+										{experience.descriptions.join(' ')}
+									</p>
+								</div> */}
 							</div>
 						))}
 					</div>

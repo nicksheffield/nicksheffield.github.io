@@ -28,6 +28,11 @@ export default function RootLayout({
 		<html lang="en" suppressHydrationWarning>
 			<head>
 				<link
+					rel="icon"
+					type="image/svg+xml"
+					href="https://fav.farm/😎"
+				/>
+				<link
 					href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
 					rel="stylesheet"
 				/>
