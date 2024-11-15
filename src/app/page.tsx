@@ -134,7 +134,7 @@ export default function Home() {
 								className="text-muted-foreground text-sm flex items-center gap-2"
 							>
 								<MailIcon className="size-4" />
-								numbereft@gmail.com
+								nick@nicksheffield.com
 							</a>
 
 							<a
