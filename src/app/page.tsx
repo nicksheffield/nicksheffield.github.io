@@ -202,7 +202,7 @@ export default function Home() {
 									</div>
 								</div>
 								<div>
-									<ul className="list-disc list-inside">
+									<ul className="list-disc list-outside pl-4">
 										{experience.descriptions.map(
 											(description) => (
 												<li
