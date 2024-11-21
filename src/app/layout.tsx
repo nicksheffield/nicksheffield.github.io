@@ -48,6 +48,11 @@ export default function RootLayout({
 				>
 					{children}
 				</ThemeProvider>
+				<script
+					defer
+					src="https://umami.nicksheffield.com/script.js"
+					data-website-id="e52fd874-c4fb-4e79-9fa0-276e8122548b"
+				/>
 			</body>
 		</html>
 	)
