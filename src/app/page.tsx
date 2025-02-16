@@ -115,12 +115,12 @@ export default function Home() {
 				<ThemeSwitch />
 			</div>
 			<main className="flex flex-col gap-12 mx-auto max-w-2xl">
-				<div className="flex items-center justify-between gap-2">
+				<div className="flex sm:items-center justify-between gap-2">
 					<div className="flex flex-col gap-2">
 						<div className="text-3xl font-bold">Nick Sheffield</div>
 						<div className="text-lg">Web Software Engineer</div>
 
-						<div className="flex gap-6 mt-1">
+						<div className="flex gap-6 mt-1 flex-wrap">
 							<a
 								href="https://github.com/nicksheffield"
 								className="text-muted-foreground text-sm flex items-center gap-2"
@@ -146,7 +146,7 @@ export default function Home() {
 							</a>
 						</div>
 					</div>
-					<div className="rounded-lg overflow-hidden">
+					<div className="rounded-lg overflow-hidden shrink-0">
 						<Image
 							src="/nick.png"
 							alt="Nick Sheffield"
@@ -187,7 +187,7 @@ export default function Home() {
 								key={experience.company}
 								className="flex flex-col gap-2"
 							>
-								<div className="flex justify-between">
+								<div className="flex justify-between sm:flex-row flex-col gap-2">
 									<div className="flex flex-col gap-2">
 										<div className="">
 											{experience.role}
@@ -251,7 +251,7 @@ export default function Home() {
 				<div className="flex flex-col gap-4">
 					<div className="text-xl font-bold">Projects</div>
 
-					<div className="grid grid-cols-2 gap-4 -mx-6">
+					<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 -mx-6">
 						{projects.map((project) => (
 							<Card
 								key={project.name}
