@@ -29,7 +29,7 @@ const workExperience = [
 		descriptions: [
 			'Taught web development to students studying a Diploma of Web Development.',
 			'Continually improved the curriculum to keep up with modern web development practices.',
-			'Introduced new technologies and frameworks to the curriculum.',
+			'Actively introduced new technologies and frameworks to the curriculum.',
 			'Taught JavaScript, HTML, CSS, PHP, MySQL, and Git.',
 		],
 	},
@@ -48,7 +48,7 @@ const workExperience = [
 
 const stack = [
 	'React',
-	'Node',
+	'Node.js',
 	'TypeScript',
 	'JavaScript',
 	'GraphQL',
@@ -57,8 +57,8 @@ const stack = [
 	'HTML',
 	'CSS',
 	'Git',
-	'Tailwind',
-	'Next',
+	'Tailwind CSS',
+	'Next.js',
 	'MySQL',
 ]
 
@@ -97,13 +97,13 @@ const projects = [
 	{
 		name: 'Falcon Grey',
 		description:
-			'An Android app for documenting firestopping work offline.',
+			'An Android app for documenting fire stopping work offline.',
 		technologies: ['Java', 'Kotlin', 'Android'],
 	},
 	{
 		name: 'JAWS',
 		description:
-			'An internal web app for managing truck deliveries and invoicing.',
+			'An internal web app used by Gleeson & Cox for scheduling and managing truck deliveries and invoicing.',
 		technologies: ['Ember', 'Sass'],
 	},
 ]
@@ -120,10 +120,10 @@ export default function Home() {
 						<div className="text-3xl font-bold">Nick Sheffield</div>
 						<div className="text-lg">Web Software Engineer</div>
 
-						<div className="flex gap-6 mt-1 flex-wrap">
+						<div className="flex gap-x-6 mt-1 flex-wrap gap-y-3">
 							<a
 								href="https://github.com/nicksheffield"
-								className="text-muted-foreground text-sm flex items-center gap-2"
+								className="text-muted-foreground text-sm flex items-center gap-2 hover:text-foreground"
 							>
 								<GithubIcon className="size-4" />
 								nicksheffield
@@ -131,18 +131,18 @@ export default function Home() {
 
 							<a
 								href="mailto:nick@nicksheffield.com"
-								className="text-muted-foreground text-sm flex items-center gap-2"
+								className="text-muted-foreground text-sm flex items-center gap-2 hover:text-foreground"
 							>
 								<MailIcon className="size-4" />
 								nick@nicksheffield.com
 							</a>
 
 							<a
-								href="tel:+64211099442"
-								className="text-muted-foreground text-sm flex items-center gap-2"
+								href="tel:+447493894593"
+								className="text-muted-foreground text-sm flex items-center gap-2 hover:text-foreground"
 							>
 								<PhoneIcon className="size-4" />
-								+64211099442
+								+447 4938 94593
 							</a>
 						</div>
 					</div>
@@ -175,6 +175,10 @@ export default function Home() {
 							commitment to quality and innovation, which I bring
 							to every project, always aiming to create seamless,
 							user-friendly digital experiences.
+						</p>
+						<p className="text-muted-foreground text-sm">
+							I am from New Zealand, but have recently moved to
+							the UK.
 						</p>
 					</div>
 				</div>
@@ -225,7 +229,7 @@ export default function Home() {
 					</div>
 				</div>
 
-				<div className="flex flex-col gap-4">
+				<div className="flex flex-col gap-4 break-before-page">
 					<div className="text-xl font-bold">Stack</div>
 
 					<div className="text-muted-foreground text-sm">
@@ -271,7 +275,7 @@ export default function Home() {
 											(technology) => (
 												<div
 													key={technology}
-													className="flex items-center gap-1 py-0.5 px-2 font-medium text-xs rounded-full bg-black/5 hover:bg-black/10 transition-all duration-300"
+													className="flex items-center gap-1 py-0.5 px-2 font-medium text-xs rounded-full bg-background hover:bg-black/10 transition-all duration-300"
 												>
 													{/* <ChevronRightIcon className="size-3" /> */}
 													{technology}
