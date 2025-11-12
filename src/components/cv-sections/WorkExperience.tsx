@@ -30,8 +30,10 @@ const WorkExperienceItem = ({
 	return (
 		<div
 			key={experience.company}
-			className="flex flex-col gap-2 break-inside-avoid"
+			className="flex flex-col gap-2 break-inside-avoid group relative"
 		>
+			<div className="absolute -top-6 -left-6 w-[calc(100%+3rem)] h-[calc(100%+3rem)] bg-muted/0 group-hover:bg-muted/50 transition-[background-color,transform] duration-200 group-hover:scale-100 scale-90 print:hidden pointer-events-none -z-10 rounded-md" />
+
 			<div className="sm:grid grid-cols-[10rem_1fr] sm:gap-x-8 contents">
 				<div className="flex sm:flex-col flex-row justify-between sm:justify-start items-start gap-4 sm:order-1 order-2">
 					<GhostLink
@@ -42,7 +44,7 @@ const WorkExperienceItem = ({
 						@ {experience.company}
 					</GhostLink>
 
-					<div className="text-muted-foreground text-sm opacity-50 font-medium">
+					<div className="text-muted-foreground/50 text-sm font-medium">
 						{experience.dates}
 					</div>
 				</div>

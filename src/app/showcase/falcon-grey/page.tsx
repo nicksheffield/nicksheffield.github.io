@@ -12,12 +12,12 @@ const Page = () => {
 				</GhostLink>
 			</div>
 
-			<div className="text-lg font-semibold">ICRA Showcase</div>
+			<div className="text-lg font-semibold">Falcon Grey Showcase</div>
 
 			<figure>
 				<Lightbox
-					src="/assets/showcase/icra/screenshot-cases.png"
-					alt="Screenshot of the ICRA Showcase"
+					src="/assets/showcase/falcon-grey/passive-fire-main.png"
+					alt="Screenshot of the Falcon Grey main screen"
 					width={1000}
 					height={1000}
 					className="rounded-lg"
@@ -26,8 +26,8 @@ const Page = () => {
 
 			<figure>
 				<Lightbox
-					src="/assets/showcase/icra/screenshot-case.png"
-					alt="Screenshot of the ICRA Showcase"
+					src="/assets/showcase/falcon-grey/passive-fire-openplan.png"
+					alt="Screenshot of the Falcon Grey plan screen"
 					width={1000}
 					height={1000}
 					className="rounded-lg"
@@ -36,8 +36,8 @@ const Page = () => {
 
 			<figure>
 				<Lightbox
-					src="/assets/showcase/icra/screenshot-case-dark.png"
-					alt="Screenshot of the ICRA Showcase"
+					src="/assets/showcase/falcon-grey/passive-fire-openplan.png"
+					alt="Screenshot of the Falcon Grey plan screen"
 					width={1000}
 					height={1000}
 					className="rounded-lg"

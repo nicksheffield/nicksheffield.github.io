@@ -1,21 +1,8 @@
 import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
-// import localFont from 'next/font/local'
-import './globals.css'
-import ThemeSwitch from '@/components/ThemeSwitch'
 import { Header } from '@/components/Header'
-import { Topography } from '@/components/Topography'
-
-// const geistSans = localFont({
-// 	src: './fonts/GeistVF.woff',
-// 	variable: '--font-geist-sans',
-// 	weight: '100 900',
-// })
-// const geistMono = localFont({
-// 	src: './fonts/GeistMonoVF.woff',
-// 	variable: '--font-geist-mono',
-// 	weight: '100 900',
-// })
+import './globals.css'
+import { Footer } from '@/components/Footer'
 
 export const metadata: Metadata = {
 	title: "Nick Sheffield's CV",
@@ -40,28 +27,24 @@ export default function RootLayout({
 					rel="stylesheet"
 				/>
 			</head>
-			<body
-			// className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-			>
+			<body>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"
 					enableSystem
 					disableTransitionOnChange
 				>
-					<div className="-z-10 fixed top-0 left-0 w-screen h-screen print:hidden">
+					{/* <div className="-z-10 fixed top-0 left-0 w-screen h-screen print:hidden">
 						<Topography className="w-full h-full object-cover" />
-					</div>
+					</div> */}
 
-					<div className="min-h-screen p-8 print:p-0 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-						<div className="fixed top-4 right-4 z-10">
-							<ThemeSwitch />
-						</div>
-
+					<div className="min-h-screen print:p-0 sm:p-20 sm:pb-0 p-6 font-[family-name:var(--font-geist-sans)]">
 						<main className="flex flex-col gap-16 mx-auto max-w-2xl print:max-w-auto">
 							<Header />
 
 							{children}
+
+							<Footer />
 						</main>
 					</div>
 				</ThemeProvider>

@@ -76,8 +76,8 @@ export type Project = {
 export const projects: Project[] = [
 	{
 		name: 'Kaizen',
-		projectLink: 'http://kz-app.com/',
 		type: 'Personal',
+		projectLink: 'http://kz-app.com/',
 		dates: '2023 - 2025',
 		description:
 			'Quickly design databases via an intuitive ERD editor, and auto-generate a ready-to-go back end api with full auth and crud.',
@@ -92,8 +92,8 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'XPO Showtime',
-		showcaseLink: '/showcase/xpo-showtime',
 		type: '@ Applicable',
+		showcaseLink: '/showcase/xpo-showtime',
 		dates: '2024',
 		description:
 			'An internal web app for managing trade show registrations and exhibitor bookings. Used Kaizen to generate the back end.',
@@ -109,8 +109,8 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'ICRA',
-		showcaseLink: '/showcase/icra',
 		type: '@ Applicable',
+		showcaseLink: '/showcase/icra',
 		dates: '2019 - 2022',
 		description: (
 			<>
@@ -126,6 +126,7 @@ export const projects: Project[] = [
 	{
 		name: 'Falcon Grey',
 		type: '@ Applicable',
+		showcaseLink: '/showcase/falcon-grey',
 		dates: '2018 - 2019',
 		description:
 			'An Android app for documenting fire stopping work offline.',

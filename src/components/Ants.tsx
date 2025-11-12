@@ -3,7 +3,7 @@
 import { cn } from '@/lib/utils'
 import { HTMLAttributes, useEffect, useState } from 'react'
 
-export const Topography = ({ className }: { className?: string }) => {
+export const Ants = ({ className }: { className?: string }) => {
 	const [mounted, setMounted] = useState(false)
 
 	useEffect(() => {
@@ -17,6 +17,7 @@ export const Topography = ({ className }: { className?: string }) => {
 			x="0px"
 			y="0px"
 			viewBox="0 0 750 500"
+			id="ants"
 			className={cn(
 				'opacity-0 transition-opacity duration-1000',
 				mounted && 'opacity-100',
@@ -509,24 +510,22 @@ const AnimatedPath = ({
 	const [random] = useState(Math.random())
 
 	const length = 3
-	const speed = totalLength / 30
+	const speed = totalLength / 5
 
 	const [dead] = useState(Math.floor(Math.random() * 1.2) === 0)
+	const [dir] = useState(Math.floor(Math.random() * 1.2) === 0)
 
 	if (dead) return null
 
 	return (
 		<path
 			style={{
-				// fill: 'rgba(255,255,255,0.01',
 				fill: 'none',
-				// stroke: 'oklch(51.1% 0.262 276.966)',
 				stroke: 'hsl(var(--ants))',
-				// strokeWidth: length ? 1 : 0,
 				strokeWidth: 1,
 				strokeMiterlimit: 10,
 				strokeLinecap: 'round',
-				strokeDashoffset: `-${totalLength}`,
+				strokeDashoffset: `${dir ? '-' : ''}${totalLength}`,
 				// strokeDasharray: [
 				// 	totalLength / divide,
 				// 	(totalLength / divide) * (divide - 1),

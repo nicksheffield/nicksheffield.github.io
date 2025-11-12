@@ -21,8 +21,10 @@ export const ProjectsItem = ({ project }: { project: Project }) => {
 	return (
 		<div
 			key={project.name}
-			className="flex flex-col gap-y-2 break-inside-avoid"
+			className="flex flex-col gap-y-2 break-inside-avoid group/block relative"
 		>
+			<div className="absolute -top-6 -left-6 w-[calc(100%+3rem)] h-[calc(100%+3rem)] bg-muted/0 group-hover/block:bg-muted/50 transition-[background-color,transform] duration-200 group-hover/block:scale-100 scale-90 print:hidden pointer-events-none -z-10 rounded-md" />
+
 			<div className="sm:grid sm:grid-cols-[10rem_1fr] sm:gap-x-8 flex flex-col gap-y-2">
 				<div className="flex sm:flex-col items-start gap-4 justify-between sm:justify-start order-2 sm:order-1">
 					<div className="text-sm font-medium text-muted-foreground">
