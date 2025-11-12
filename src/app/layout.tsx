@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
 // import localFont from 'next/font/local'
 import './globals.css'
+import ThemeSwitch from '@/components/ThemeSwitch'
+import { Header } from '@/components/Header'
+import { Topography } from '@/components/Topography'
 
 // const geistSans = localFont({
 // 	src: './fonts/GeistVF.woff',
@@ -46,7 +49,21 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange
 				>
-					{children}
+					<div className="-z-10 fixed top-0 left-0 w-screen h-screen print:hidden">
+						<Topography className="w-full h-full object-cover" />
+					</div>
+
+					<div className="min-h-screen p-8 print:p-0 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+						<div className="fixed top-4 right-4 z-10">
+							<ThemeSwitch />
+						</div>
+
+						<main className="flex flex-col gap-16 mx-auto max-w-2xl print:max-w-auto">
+							<Header />
+
+							{children}
+						</main>
+					</div>
 				</ThemeProvider>
 				<script
 					defer
