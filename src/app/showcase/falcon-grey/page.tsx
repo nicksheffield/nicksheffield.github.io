@@ -1,15 +1,22 @@
 import { Lightbox } from '@/components/Lightbox'
-import { GhostLink } from '@/components/Link'
+import Link from 'next/link'
 import { ArrowLeftIcon } from 'lucide-react'
+import { buttonVariants } from '@/components/ui/button'
 
 const Page = () => {
 	return (
 		<div className="flex flex-col gap-8">
 			<div className="flex">
-				<GhostLink href="/" className="text-sm font-medium">
+				<Link
+					href="/"
+					className={buttonVariants({
+						variant: 'secondary',
+						size: 'sm',
+					})}
+				>
 					<ArrowLeftIcon className="size-4" />
 					Back to CV
-				</GhostLink>
+				</Link>
 			</div>
 
 			<div className="text-lg font-semibold">Falcon Grey Showcase</div>

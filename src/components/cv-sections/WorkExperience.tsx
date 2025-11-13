@@ -1,9 +1,9 @@
-import { GhostLink } from '@/components/Link'
 import { Section, SectionBody, SectionHeading } from '@/components/Section'
 import {
 	workExperiences,
 	type WorkExperience as WorkExperienceType,
 } from '@/lib/data'
+import { cn } from '@/lib/utils'
 
 export const WorkExperience = () => {
 	return (
@@ -11,10 +11,11 @@ export const WorkExperience = () => {
 			<SectionHeading>Work Experience</SectionHeading>
 
 			<SectionBody>
-				{workExperiences.map((experience) => (
+				{workExperiences.map((experience, i) => (
 					<WorkExperienceItem
 						key={experience.company}
 						experience={experience}
+						isLast={i === workExperiences.length - 1}
 					/>
 				))}
 			</SectionBody>
@@ -24,43 +25,56 @@ export const WorkExperience = () => {
 
 const WorkExperienceItem = ({
 	experience,
+	isLast,
 }: {
 	experience: WorkExperienceType
+	isLast: boolean
 }) => {
 	return (
 		<div
 			key={experience.company}
-			className="flex flex-col gap-2 break-inside-avoid group relative"
+			className="break-inside-avoid relative flex flex-row gap-8"
 		>
-			<div className="absolute -top-6 -left-6 w-[calc(100%+3rem)] h-[calc(100%+3rem)] bg-muted/0 group-hover:bg-muted/50 transition-[background-color,transform] duration-200 group-hover:scale-100 scale-90 print:hidden pointer-events-none -z-10 rounded-md" />
+			{!isLast && (
+				<span
+					aria-hidden="true"
+					className="absolute top-8 left-2 -ml-px h-full w-0.5 bg-gray-200 dark:bg-white/10 z-10"
+				/>
+			)}
 
-			<div className="sm:grid grid-cols-[10rem_1fr] sm:gap-x-8 contents">
-				<div className="flex sm:flex-col flex-row justify-between sm:justify-start items-start gap-4 sm:order-1 order-2">
-					<GhostLink
-						href={experience.companyLink}
-						className="text-sm font-medium"
-						external
-					>
-						@ {experience.company}
-					</GhostLink>
+			<span
+				className={cn(
+					'bg-indigo-600',
+					'flex size-4 shrink-0 items-center justify-center rounded-full ring-8 ring-white dark:ring-gray-900 z-20'
+				)}
+			>
+				{/* <CheckIcon aria-hidden="true" className="size-5 text-white" /> */}
+			</span>
 
-					<div className="text-muted-foreground/50 text-sm font-medium">
-						{experience.dates}
-					</div>
-				</div>
+			<div className="flex flex-col gap-2 group relative flex-1 -mt-1">
+				<div className="absolute -inset-x-4 -inset-y-4 bg-muted/0 group-hover:bg-muted/50 transition-[background-color,scale] duration-200 group-hover:scale-100 scale-95 print:hidden pointer-events-none -z-10 rounded-2xl" />
 
-				<div className="sm:flex flex-col gap-4 contents sm:order-1">
-					<div className="flex justify-between sm:flex-row flex-col gap-2 order-1">
-						<div className="font-medium text-sm">
-							{experience.role}
+				<div className="flex flex-col gap-y-4">
+					<div className="flex flex-row justify-between">
+						<div>
+							<span className="font-medium">
+								{experience.role}
+							</span>{' '}
+							<span className="text-muted-foreground">
+								@ {experience.company}
+							</span>
+						</div>
+
+						<div className="text-muted-foreground/50 text-sm font-medium leading-6 order-3">
+							{experience.dates}
 						</div>
 					</div>
 
-					<ul className="list-disc list-outside pl-4 flex flex-col gap-2 sm:order-2 order-3">
+					<ul className="list-disc list-outside pl-4 flex flex-col gap-2 order-4">
 						{experience.descriptions.map((description) => (
 							<li
 								key={description}
-								className="text-muted-foreground text-sm leading-relaxed text-pretty"
+								className="text-muted-foreground text-sm leading-6 text-pretty"
 							>
 								{description}
 							</li>

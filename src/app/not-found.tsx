@@ -1,4 +1,5 @@
-import { Link } from '@/components/Link'
+import { buttonVariants } from '@/components/ui/button'
+import Link from 'next/link'
 
 const NotFound = () => {
 	return (
@@ -10,7 +11,13 @@ const NotFound = () => {
 					The page you are looking for does not exist or has been
 					moved.
 				</p>
-				<Link href="/" className="text-sm">
+				<Link
+					href="/"
+					className={buttonVariants({
+						variant: 'secondary',
+						size: 'sm',
+					})}
+				>
 					Return Home
 				</Link>
 			</div>

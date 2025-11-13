@@ -1,4 +1,4 @@
-import { Link } from '@/components/Link'
+import Link from 'next/link'
 import type { ReactNode } from 'react'
 
 export type WorkExperience = {

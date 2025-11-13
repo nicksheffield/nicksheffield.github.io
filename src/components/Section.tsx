@@ -19,7 +19,7 @@ export const SectionHeading = ({
 	...props
 }: PropsWithChildren<HTMLAttributes<HTMLDivElement>>) => {
 	return (
-		<div className={cn('text-lg font-semibold', className)} {...props}>
+		<div className={cn('text-2xl font-semibold', className)} {...props}>
 			{children}
 		</div>
 	)

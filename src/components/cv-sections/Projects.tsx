@@ -1,7 +1,10 @@
-import { GroupLink, InnerGhostLink } from '@/components/Link'
+import { Badge } from '@/components/Badge'
 import { Section, SectionBody, SectionHeading } from '@/components/Section'
+import { buttonVariants } from '@/components/ui/button'
 import { Project, projects } from '@/lib/data'
+import { cn } from '@/lib/utils'
 import { ArrowRightIcon, LinkIcon } from 'lucide-react'
+import Link from 'next/link'
 
 export const Projects = () => {
 	return (
@@ -23,7 +26,7 @@ export const ProjectsItem = ({ project }: { project: Project }) => {
 			key={project.name}
 			className="flex flex-col gap-y-2 break-inside-avoid group/block relative"
 		>
-			<div className="absolute -top-6 -left-6 w-[calc(100%+3rem)] h-[calc(100%+3rem)] bg-muted/0 group-hover/block:bg-muted/50 transition-[background-color,transform] duration-200 group-hover/block:scale-100 scale-90 print:hidden pointer-events-none -z-10 rounded-md" />
+			<div className="absolute -inset-x-4 -inset-y-4 bg-muted/0 group-hover/block:bg-muted/50 transition-[background-color,scale] duration-200 group-hover/block:scale-100 scale-90 print:hidden pointer-events-none -z-10 rounded-3xl" />
 
 			<div className="sm:grid sm:grid-cols-[10rem_1fr] sm:gap-x-8 flex flex-col gap-y-2">
 				<div className="flex sm:flex-col items-start gap-4 justify-between sm:justify-start order-2 sm:order-1">
@@ -37,32 +40,44 @@ export const ProjectsItem = ({ project }: { project: Project }) => {
 
 				<div className="sm:flex flex-col gap-4 sm:order-2 contents">
 					{project.projectLink || project.showcaseLink ? (
-						<GroupLink
-							href={
-								project.projectLink ||
-								project.showcaseLink ||
-								'#'
-							}
-							className="flex flex-row justify-between gap-4 order-1"
-							external={!!project.projectLink}
-						>
+						<div className="flex flex-row justify-between gap-4 order-1">
 							<div className="text-sm font-medium">
 								{project.name}
 							</div>
 
 							{project.projectLink && (
-								<InnerGhostLink className="text-sm font-medium text-muted-foreground print:hidden">
+								<Link
+									className={cn(
+										'print:hidden',
+										buttonVariants({
+											variant: 'secondary',
+											size: 'xs',
+										})
+									)}
+									href={project.projectLink}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
 									View <LinkIcon className="size-4" />
-								</InnerGhostLink>
+								</Link>
 							)}
 
 							{project.showcaseLink && (
-								<InnerGhostLink className="text-sm font-medium text-muted-foreground print:hidden">
+								<Link
+									className={cn(
+										'print:hidden',
+										buttonVariants({
+											variant: 'secondary',
+											size: 'xs',
+										})
+									)}
+									href={project.showcaseLink}
+								>
 									Showcase{' '}
 									<ArrowRightIcon className="size-4" />
-								</InnerGhostLink>
+								</Link>
 							)}
-						</GroupLink>
+						</div>
 					) : (
 						<div className="text-sm font-medium order-1">
 							{project.name}
@@ -75,12 +90,7 @@ export const ProjectsItem = ({ project }: { project: Project }) => {
 
 					<div className="flex gap-2 flex-wrap order-4">
 						{project.technologies.map((technology) => (
-							<div
-								key={technology}
-								className="flex items-center gap-1 py-0.5 px-2 font-medium text-xs print:pl-0 bg-indigo-500/10 text-indigo-500 rounded-sm"
-							>
-								{technology}
-							</div>
+							<Badge key={technology}>{technology}</Badge>
 						))}
 					</div>
 				</div>

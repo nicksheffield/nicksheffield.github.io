@@ -30,27 +30,27 @@ export const About = () => {
 		<Section>
 			{/* <SectionHeading>About</SectionHeading> */}
 
-			<SectionBody className="gap-4">
-				<p className="text-muted-foreground text-sm leading-relaxed text-pretty">
+			<SectionBody className="gap-6">
+				<p className="text-muted-foreground leading-7 text-pretty">
 					<span className="font-medium text-foreground">
 						Hi, I'm Nick
 					</span>
 					. I'm a seasoned front-end software developer with over 16
 					years of hands-on coding experience, specializing in
-					React.js, Node.js, and building seamless, scalable digital
-					experiences. I'm driven by a deep curiosity and a constant
-					desire to learn — always exploring new tools, frameworks,
-					and best practices to stay ahead in a fast-moving industry.
+					React.js, Node.js. I'm driven by a deep curiosity and a
+					constant desire to learn — always exploring new tools,
+					frameworks, and best practices to stay ahead in a
+					fast-moving industry.
 				</p>
 
-				<p className="text-muted-foreground text-sm leading-relaxed text-pretty">
+				<p className="text-muted-foreground leading-7 text-pretty">
 					In addition to my technical proficiency, I'm also an
 					experienced team leader and mentor with experience bringing
 					a passion for sharing knowledge, and fostering a
 					collaborative, learning-driven environment.
 				</p>
 
-				<p className="text-muted-foreground text-sm leading-relaxed text-pretty">
+				<p className="text-muted-foreground leading-7 text-pretty">
 					Originally from New Zealand, I've recently relocated to the
 					UK, bringing with me a strong work ethic, a sharp eye for
 					detail, and a passion for crafting clean, intuitive UIs that
