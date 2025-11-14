@@ -53,7 +53,7 @@ const WorkExperienceItem = ({
 				<div className="absolute -inset-x-4 -inset-y-4 bg-muted/0 group-hover:bg-muted/50 transition-[background-color,scale] group-hover:scale-100 scale-95 print:hidden pointer-events-none -z-10 rounded-2xl" />
 
 				<div className="flex flex-col gap-y-4">
-					<div className="flex flex-row justify-between">
+					<div className="flex flex-col sm:flex-row justify-between">
 						<div>
 							<span className="font-medium">
 								{experience.role}
@@ -63,7 +63,7 @@ const WorkExperienceItem = ({
 							</span>
 						</div>
 
-						<div className="text-muted-foreground/50 text-sm font-medium leading-6 order-3">
+						<div className="text-muted-foreground/50 text-sm leading-6 order-3">
 							{experience.dates}
 						</div>
 					</div>

@@ -1,6 +1,3 @@
-import Link from 'next/link'
-import type { ReactNode } from 'react'
-
 export type WorkExperience = {
 	company: string
 	companyLink: string
@@ -69,18 +66,18 @@ export type Project = {
 	showcaseLink?: string
 	type: string
 	dates: string
-	description: ReactNode
+	description: string
 	technologies: string[]
 }
 
 export const projects: Project[] = [
 	{
 		name: 'Kaizen',
-		type: '',
+		type: 'Personal Project',
 		projectLink: 'http://kz-app.com/',
 		dates: '2023 - 2025',
 		description:
-			'Quickly design databases via an intuitive ERD editor, and auto-generate a ready-to-go back end api with full auth and crud.',
+			'Quickly design databases via an intuitive ERD editor, and auto-generate a ready-to-go back end api with full auth and crud. This system was used to rapidly generate the backend for the XPO Showtime app I worked on at Applicable. The generated back end made use of a monorepo structure to allow the user to easily add custom functionality without interfering with the auto-generated code.',
 		technologies: [
 			'React',
 			'Node.js',
@@ -92,57 +89,45 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'XPO Showtime',
-		type: '@ Applicable',
+		type: 'Applicable',
 		showcaseLink: '/showcase/xpo-showtime',
 		dates: '2024',
 		description:
-			'An internal web app for managing trade show registrations and exhibitor bookings. Used Kaizen to generate the back end.',
+			'An internal web app for a trade show management company. It allowed users to easily manage upcoming shows, handle exhibitor and visitor registration and manage printable badges. It also integrated with a companion app used for networking between exhibitors and attendees.',
 		technologies: ['React', 'Shadcn ui', 'TypeScript', 'GraphQL', 'MySQL'],
 	},
 	{
 		name: 'Resolutionary',
-		type: '@ Applicable',
+		type: 'Applicable',
 		dates: '2021 - 2024',
 		description:
-			'An internal web app for managing multiple legal dispute resolution services.',
+			"An internal web app for managing multiple legal dispute resolution services. Multiple different legal dispute resolution processes needed to be modelled using a flowchart editor, and each process needed its own bespoke UI's that were designed using an in-app design tool.",
 		technologies: ['React', 'Tailwind CSS', 'TypeScript'],
 	},
 	{
 		name: 'ICRA',
-		type: '@ Applicable',
+		type: 'Applicable',
 		showcaseLink: '/showcase/icra',
 		dates: '2019 - 2022',
-		description: (
-			<>
-				A web app for managing meetings in the{' '}
-				<Link href="https://icra.co.nz/">
-					alternative dispute resolution
-				</Link>{' '}
-				industry.
-			</>
-		),
+		description:
+			'A web app for managing meetings in the alternative dispute resolution industry. The app was used by the ICRA team to create and run conferences between lawyers, clients, and ACC (Accident Compensation Corporation) representatives.',
 		technologies: ['React', 'Tailwind CSS', 'TypeScript'],
 	},
 	{
 		name: 'Falcon Grey',
-		type: '@ Applicable',
+		type: 'Applicable',
 		showcaseLink: '/showcase/falcon-grey',
 		dates: '2018 - 2019',
 		description:
-			'An Android app for documenting fire stopping work offline.',
+			'An Android app for documenting fire stopping work offline. Builders would use the app in the field to document the fire stop work they had done. The app allowed them to add the system used, take photos, and interface with a bluetooth printer to create sticky labels.',
 		technologies: ['Java', 'Kotlin', 'Android'],
 	},
 	{
 		name: 'JAWS',
-		type: '@ Applicable',
+		type: 'Applicable',
 		dates: '2017 - 2018',
-		description: (
-			<>
-				An internal web app used by{' '}
-				<Link href="https://www.gleesoncox.co.nz/">Gleeson & Cox</Link>{' '}
-				for scheduling and managing truck deliveries and invoicing.
-			</>
-		),
+		description:
+			'An internal web app used by Gleeson & Cox for scheduling and managing truck deliveries and invoicing. The app was established before I joined the company, but I helped with maintenance and new features.',
 		technologies: ['Ember', 'Sass'],
 	},
 ]

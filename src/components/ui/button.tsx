@@ -39,11 +39,11 @@ const buttonVariants = cva(
 		variants: {
 			variant: {
 				default:
-					'bg-primary hover:bg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary dark:bg-primary dark:shadow-none dark:hover:bg-primary/90 dark:focus-visible:outline-primary',
+					'bg-primary text-background hover:bg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary dark:bg-primary dark:shadow-none dark:hover:bg-primary/90 dark:focus-visible:outline-primary',
 				secondary:
 					'bg-white text-gray-900 inset-ring inset-ring-gray-300 hover:bg-gray-50 dark:bg-white/10 dark:text-white dark:shadow-none dark:inset-ring-white/5 dark:hover:bg-white/20',
 				soft: 'bg-indigo-50 text-indigo-600 hover:bg-indigo-100 dark:bg-indigo-600/20 dark:text-indigo-400 dark:shadow-none dark:hover:bg-indigo-500/30',
-				link: 'text-primary underline-offset-4 hover:underline',
+				link: 'text-primary underline-offset-4 hover:underline shadow-none',
 			},
 			size: {
 				default: 'rounded-md px-2.5 py-1.5 text-sm',

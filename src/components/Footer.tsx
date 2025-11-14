@@ -12,7 +12,7 @@ export const Footer = () => {
 		<div className="flex flex-col gap-16 pb-16 print:hidden">
 			<Separator />
 
-			<div className="flex flex-row items-center justify-between gap-4">
+			<div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
 				<div className="text-sm font-medium text-muted-foreground/50">
 					&copy; Nick Sheffield 2025
 				</div>

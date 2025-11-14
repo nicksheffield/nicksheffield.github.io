@@ -3,7 +3,7 @@ import { Section, SectionBody, SectionHeading } from '@/components/Section'
 import { buttonVariants } from '@/components/ui/button'
 import { Project, projects } from '@/lib/data'
 import { cn } from '@/lib/utils'
-import { ArrowRightIcon, LinkIcon } from 'lucide-react'
+import { ChevronRightIcon } from 'lucide-react'
 import Link from 'next/link'
 
 export const Projects = () => {
@@ -11,7 +11,7 @@ export const Projects = () => {
 		<Section>
 			<SectionHeading>Projects</SectionHeading>
 
-			<SectionBody>
+			<SectionBody className="gap-16">
 				{projects.map((project) => (
 					<ProjectsItem key={project.name} project={project} />
 				))}
@@ -26,69 +26,39 @@ export const ProjectsItem = ({ project }: { project: Project }) => {
 			key={project.name}
 			className="flex flex-col gap-y-2 break-inside-avoid group/block relative"
 		>
-			<div className="absolute -inset-x-4 -inset-y-4 bg-muted/0 group-hover/block:bg-muted/50 transition-[background-color,scale] group-hover/block:scale-100 scale-90 print:hidden pointer-events-none -z-10 rounded-2xl" />
+			<div className="absolute -inset-x-5 -inset-y-4 bg-muted/0 group-hover/block:bg-muted/50 transition-[background-color,scale] group-hover/block:scale-100 scale-90 print:hidden pointer-events-none -z-10 rounded-2xl" />
 
-			<div className="sm:grid sm:grid-cols-[10rem_1fr] sm:gap-x-8 flex flex-col gap-y-2">
-				<div className="flex sm:flex-col items-start gap-4 justify-between sm:justify-start order-2 sm:order-1">
-					<div className="text-sm font-medium text-muted-foreground">
-						{project.type}
-					</div>
-					<div className="text-muted-foreground text-sm opacity-50 font-medium">
-						{project.dates}
+			<div className="flex flex-col gap-0">
+				{/* <div className="relative z-10 order-first flex items-center text-sm text-muted-foreground/50 pl-3.5">
+					<span
+						className="absolute inset-y-0 left-0 flex items-center"
+						aria-hidden="true"
+					>
+						<span className="h-4 w-0.5 rounded-full bg-foreground/20" />
+					</span>
+					{project.type}, {project.dates}
+				</div>
+
+				<div className="mt-3 text-base font-semibold tracking-tight text-foreground">
+					{project.name}
+				</div> */}
+
+				<div className="flex items-center gap-3.5">
+					<div className="font-medium">{project.name}</div>
+
+					<span className="h-4 w-0.5 rounded-full bg-foreground/20" />
+
+					<div className="text-muted-foreground/50">
+						{project.type}, {project.dates}
 					</div>
 				</div>
 
-				<div className="sm:flex flex-col gap-4 sm:order-2 contents">
-					{project.projectLink || project.showcaseLink ? (
-						<div className="flex flex-row justify-between gap-4 order-1">
-							<div className="text-sm font-medium">
-								{project.name}
-							</div>
+				<div className="mt-2 relative z-10 text-sm text-muted-foreground text-pretty leading-6">
+					{project.description}
+				</div>
 
-							{project.projectLink && (
-								<Link
-									className={cn(
-										'print:hidden',
-										buttonVariants({
-											variant: 'secondary',
-											size: 'sm',
-										})
-									)}
-									href={project.projectLink}
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									View <LinkIcon className="size-4" />
-								</Link>
-							)}
-
-							{project.showcaseLink && (
-								<Link
-									className={cn(
-										'print:hidden',
-										buttonVariants({
-											variant: 'secondary',
-											size: 'sm',
-										})
-									)}
-									href={project.showcaseLink}
-								>
-									Showcase{' '}
-									<ArrowRightIcon className="size-4" />
-								</Link>
-							)}
-						</div>
-					) : (
-						<div className="text-sm font-medium order-1">
-							{project.name}
-						</div>
-					)}
-
-					<div className="text-muted-foreground text-sm leading-relaxed text-pretty order-3">
-						{project.description}
-					</div>
-
-					<div className="flex gap-2 flex-wrap order-4">
+				<div className="mt-4 flex flex-col sm:flex-row justify-between gap-4">
+					<div className="flex items-center gap-2 flex-wrap">
 						{project.technologies.map((technology) => (
 							<Badge
 								key={technology}
@@ -97,6 +67,40 @@ export const ProjectsItem = ({ project }: { project: Project }) => {
 								{technology}
 							</Badge>
 						))}
+					</div>
+
+					<div className="flex flex-row justify-between gap-4">
+						{project.projectLink && (
+							<Link
+								className={cn(
+									'print:hidden',
+									buttonVariants({
+										variant: 'link',
+										size: 'sm',
+									})
+								)}
+								href={project.projectLink}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								View <ChevronRightIcon className="size-4" />
+							</Link>
+						)}
+
+						{project.showcaseLink && (
+							<Link
+								className={cn(
+									'print:hidden',
+									buttonVariants({
+										variant: 'link',
+										size: 'sm',
+									})
+								)}
+								href={project.showcaseLink}
+							>
+								Showcase <ChevronRightIcon className="size-4" />
+							</Link>
+						)}
 					</div>
 				</div>
 			</div>
