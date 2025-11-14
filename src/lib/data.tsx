@@ -26,7 +26,7 @@ export const workExperiences: WorkExperience[] = [
 		role: 'Lecturer',
 		dates: 'Jan 2012 - Jul 2017',
 		descriptions: [
-			'Taught web development to students studying a Diploma of Web Development.',
+			'Taught students studying both Diploma of Web Development and Diploma of Interactive Design.',
 			'Continually improved the curriculum to keep up with modern web development practices.',
 			'Actively introduced new technologies and frameworks to the curriculum.',
 			'Taught JavaScript, HTML, CSS, PHP, MySQL, and Git.',

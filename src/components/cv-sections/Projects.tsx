@@ -62,7 +62,7 @@ export const ProjectsItem = ({ project }: { project: Project }) => {
 						{project.technologies.map((technology) => (
 							<Badge
 								key={technology}
-								className="flex items-center gap-1 py-0.5 px-2 font-medium text-xs print:pl-0 bg-indigo-500/10 text-indigo-500 rounded-sm"
+								className="flex items-center gap-1 py-0.5 px-2 font-medium text-xs print:pl-0 bg-primary-500/10 text-primary-500 rounded-sm"
 							>
 								{technology}
 							</Badge>

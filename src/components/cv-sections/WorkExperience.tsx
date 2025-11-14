@@ -44,8 +44,8 @@ const WorkExperienceItem = ({
 
 			<span
 				className={cn(
-					'bg-indigo-600',
-					'flex size-4 shrink-0 items-center justify-center rounded-full ring-8 ring-indigo-600/20 z-20 print:hidden'
+					'bg-primary-600',
+					'flex size-4 shrink-0 items-center justify-center rounded-full ring-8 ring-primary-600/20 z-20 print:hidden'
 				)}
 			/>
 
