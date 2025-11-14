@@ -38,21 +38,19 @@ const WorkExperienceItem = ({
 			{!isLast && (
 				<span
 					aria-hidden="true"
-					className="absolute top-8 left-2 -ml-px h-full w-0.5 bg-gray-200 dark:bg-white/10 z-10"
+					className="absolute top-8 left-2 -ml-px h-full w-0.5 bg-border z-10 print:hidden"
 				/>
 			)}
 
 			<span
 				className={cn(
 					'bg-indigo-600',
-					'flex size-4 shrink-0 items-center justify-center rounded-full ring-8 ring-white dark:ring-gray-900 z-20'
+					'flex size-4 shrink-0 items-center justify-center rounded-full ring-8 ring-indigo-600/20 z-20 print:hidden'
 				)}
-			>
-				{/* <CheckIcon aria-hidden="true" className="size-5 text-white" /> */}
-			</span>
+			/>
 
-			<div className="flex flex-col gap-2 group relative flex-1 -mt-1">
-				<div className="absolute -inset-x-4 -inset-y-4 bg-muted/0 group-hover:bg-muted/50 transition-[background-color,scale] duration-200 group-hover:scale-100 scale-95 print:hidden pointer-events-none -z-10 rounded-2xl" />
+			<div className="flex flex-col gap-2 group relative flex-1 -mt-1 print:mt-0">
+				<div className="absolute -inset-x-4 -inset-y-4 bg-muted/0 group-hover:bg-muted/50 transition-[background-color,scale] group-hover:scale-100 scale-95 print:hidden pointer-events-none -z-10 rounded-2xl" />
 
 				<div className="flex flex-col gap-y-4">
 					<div className="flex flex-row justify-between">
@@ -70,7 +68,7 @@ const WorkExperienceItem = ({
 						</div>
 					</div>
 
-					<ul className="list-disc list-outside pl-4 flex flex-col gap-2 order-4">
+					<ul className="list-disc list-outside pl-4 flex flex-col gap-2 order-4 print:gap-1">
 						{experience.descriptions.map((description) => (
 							<li
 								key={description}

@@ -30,8 +30,8 @@ export const About = () => {
 		<Section>
 			{/* <SectionHeading>About</SectionHeading> */}
 
-			<SectionBody className="gap-6">
-				<p className="text-muted-foreground leading-7 text-pretty">
+			<SectionBody className="gap-6 print:text-sm leading-7 print:leading-normal text-pretty">
+				<p className="text-muted-foreground">
 					<span className="font-medium text-foreground">
 						Hi, I'm Nick
 					</span>
@@ -43,14 +43,14 @@ export const About = () => {
 					fast-moving industry.
 				</p>
 
-				<p className="text-muted-foreground leading-7 text-pretty">
+				<p className="text-muted-foreground">
 					In addition to my technical proficiency, I'm also an
 					experienced team leader and mentor with experience bringing
 					a passion for sharing knowledge, and fostering a
 					collaborative, learning-driven environment.
 				</p>
 
-				<p className="text-muted-foreground leading-7 text-pretty">
+				<p className="text-muted-foreground">
 					Originally from New Zealand, I've recently relocated to the
 					UK, bringing with me a strong work ethic, a sharp eye for
 					detail, and a passion for crafting clean, intuitive UIs that

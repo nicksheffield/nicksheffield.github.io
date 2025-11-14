@@ -76,7 +76,7 @@ export type Project = {
 export const projects: Project[] = [
 	{
 		name: 'Kaizen',
-		type: 'Personal',
+		type: '',
 		projectLink: 'http://kz-app.com/',
 		dates: '2023 - 2025',
 		description:

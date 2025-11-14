@@ -39,7 +39,7 @@ export default function RootLayout({
 					</div> */}
 
 					<div className="min-h-screen print:p-0 sm:p-20 sm:pb-0 p-6 font-[family-name:var(--font-geist-sans)]">
-						<main className="flex flex-col gap-16 mx-auto max-w-2xl print:max-w-auto">
+						<main className="flex flex-col gap-24 print:gap-8 mx-auto max-w-2xl print:max-w-auto">
 							<Header />
 
 							{children}

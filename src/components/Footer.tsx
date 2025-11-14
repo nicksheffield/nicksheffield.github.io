@@ -24,7 +24,7 @@ export const Footer = () => {
 						}}
 					>
 						<PrinterIcon />
-						Print CV as PDF
+						Print resume as PDF
 					</Button>
 				)}
 			</div>

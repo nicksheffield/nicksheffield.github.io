@@ -26,7 +26,7 @@ export const ProjectsItem = ({ project }: { project: Project }) => {
 			key={project.name}
 			className="flex flex-col gap-y-2 break-inside-avoid group/block relative"
 		>
-			<div className="absolute -inset-x-4 -inset-y-4 bg-muted/0 group-hover/block:bg-muted/50 transition-[background-color,scale] duration-200 group-hover/block:scale-100 scale-90 print:hidden pointer-events-none -z-10 rounded-3xl" />
+			<div className="absolute -inset-x-4 -inset-y-4 bg-muted/0 group-hover/block:bg-muted/50 transition-[background-color,scale] group-hover/block:scale-100 scale-90 print:hidden pointer-events-none -z-10 rounded-2xl" />
 
 			<div className="sm:grid sm:grid-cols-[10rem_1fr] sm:gap-x-8 flex flex-col gap-y-2">
 				<div className="flex sm:flex-col items-start gap-4 justify-between sm:justify-start order-2 sm:order-1">
@@ -51,7 +51,7 @@ export const ProjectsItem = ({ project }: { project: Project }) => {
 										'print:hidden',
 										buttonVariants({
 											variant: 'secondary',
-											size: 'xs',
+											size: 'sm',
 										})
 									)}
 									href={project.projectLink}
@@ -68,7 +68,7 @@ export const ProjectsItem = ({ project }: { project: Project }) => {
 										'print:hidden',
 										buttonVariants({
 											variant: 'secondary',
-											size: 'xs',
+											size: 'sm',
 										})
 									)}
 									href={project.showcaseLink}
@@ -90,7 +90,12 @@ export const ProjectsItem = ({ project }: { project: Project }) => {
 
 					<div className="flex gap-2 flex-wrap order-4">
 						{project.technologies.map((technology) => (
-							<Badge key={technology}>{technology}</Badge>
+							<Badge
+								key={technology}
+								className="flex items-center gap-1 py-0.5 px-2 font-medium text-xs print:pl-0 bg-indigo-500/10 text-indigo-500 rounded-sm"
+							>
+								{technology}
+							</Badge>
 						))}
 					</div>
 				</div>
