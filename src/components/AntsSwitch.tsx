@@ -18,7 +18,7 @@ export const AntsSwitch = () => {
 
 	return (
 		<Button
-			variant="outline"
+			variant="secondary"
 			size="icon"
 			className="print:hidden"
 			onClick={() => {
