@@ -56,12 +56,11 @@ export function ThemeToggle() {
 			onClick={() => setTheme(otherTheme)}
 			className="flex flex-col relative justify-start items-stretch gap-0 overflow-hidden"
 		>
-			<div className="size-9 shrink-0 flex items-center justify-center transition-transform duration-200 translate-y-0 dark:-translate-y-full">
-				<SunIcon className="size-5! stroke-foreground fill-none" />
-			</div>
-
-			<div className="size-9 shrink-0 flex items-center justify-center transition-transform duration-200 translate-y-0 dark:-translate-y-full">
+			<div className="size-9 shrink-0 flex items-center justify-center transition-transform duration-200 -translate-y-full dark:translate-y-0">
 				<MoonIcon className="size-5! stroke-foreground fill-foreground/20" />
+			</div>
+			<div className="size-9 shrink-0 flex items-center justify-center transition-transform duration-200 -translate-y-full dark:translate-y-0">
+				<SunIcon className="size-5! stroke-foreground fill-none" />
 			</div>
 		</Button>
 	)
