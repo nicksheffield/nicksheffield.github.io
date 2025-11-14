@@ -1,26 +1,27 @@
 import Link from 'next/link'
-import ThemeSwitch from '@/components/ThemeSwitch'
 import { GithubIcon, MailIcon, PhoneIcon } from 'lucide-react'
 import Image from 'next/image'
 import { buttonVariants } from '@/components/ui/button'
+import { ThemeToggle } from '@/components/ThemeToggle'
 
 export const Header = () => {
 	return (
-		<div className="flex sm:items-center sm:flex-row flex-col gap-6 print:mt-8">
+		<div className="flex sm:items-center sm:flex-row flex-col gap-6 print:mt-8 relative">
 			<div className="shrink-0 flex flex-row justify-between items-start">
-				<div className="w-[100px] h-[100px] overflow-hidden rounded-lg relative">
+				<div className="w-[120px] h-[120px] overflow-hidden rounded-sm relative bg-radial from-primary-600 from-40% to-primary-900">
 					<Image
-						src="/nick.png"
+						src="/nick-removebg-preview.png"
 						alt="Nick Sheffield"
 						width={700}
 						height={700}
-						className="absolute w-[150px] h-[150px] max-w-[initial] aspect-square -top-2 -left-7"
+						className="absolute w-[170px] h-[170px] max-w-[initial] aspect-square -top-2 -left-7"
 					/>
 				</div>
 
-				<div className="sm:fixed top-4 right-4 z-10 flex items-center gap-4">
+				<div className="absolute top-0 right-0 z-10">
 					{/* <AntsSwitch /> */}
-					<ThemeSwitch />
+					{/* <ThemeSwitch /> */}
+					<ThemeToggle />
 				</div>
 			</div>
 

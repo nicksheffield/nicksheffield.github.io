@@ -1,4 +1,3 @@
-import { Badge } from '@/components/Badge'
 import { Section, SectionBody, SectionHeading } from '@/components/Section'
 import { buttonVariants } from '@/components/ui/button'
 import { Project, projects } from '@/lib/data'
@@ -58,14 +57,14 @@ export const ProjectsItem = ({ project }: { project: Project }) => {
 				</div>
 
 				<div className="mt-4 flex flex-col sm:flex-row justify-between gap-4">
-					<div className="flex items-center gap-2 flex-wrap">
+					<div className="flex items-center gap-4 flex-wrap">
 						{project.technologies.map((technology) => (
-							<Badge
+							<div
 								key={technology}
-								className="flex items-center gap-1 py-0.5 px-2 font-medium text-xs print:pl-0 bg-primary-500/10 text-primary-500 rounded-sm"
+								className="font-medium text-xs text-primary-500"
 							>
 								{technology}
-							</Badge>
+							</div>
 						))}
 					</div>
 

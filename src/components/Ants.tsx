@@ -509,19 +509,20 @@ const AnimatedPath = ({
 	const [totalLength, setTotalLength] = useState(0)
 	const [random] = useState(Math.random())
 
-	const length = 3
-	const speed = totalLength / 5
+	const length = totalLength / 2
+	const speed = totalLength / 100
 
-	const [dead] = useState(Math.floor(Math.random() * 1.2) === 0)
 	const [dir] = useState(Math.floor(Math.random() * 1.2) === 0)
 
-	if (dead) return null
+	// const [dead] = useState(Math.floor(Math.random() * 1.2) === 0)
+	// if (dead) return null
 
 	return (
 		<path
 			style={{
 				fill: 'none',
-				stroke: 'hsl(var(--ants))',
+				stroke: 'var(--color-primary-600)',
+				opacity: 0.2,
 				strokeWidth: 1,
 				strokeMiterlimit: 10,
 				strokeLinecap: 'round',

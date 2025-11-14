@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { ThemeProvider } from 'next-themes'
+import { ThemeProvider } from '@/components/ThemeProvider'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { Glow } from '@/components/Glow'
@@ -32,12 +32,7 @@ export default function RootLayout({
 			</head>
 
 			<body>
-				<ThemeProvider
-					attribute="class"
-					defaultTheme="system"
-					enableSystem
-					disableTransitionOnChange
-				>
+				<ThemeProvider>
 					<div className="min-h-screen print:p-0 sm:p-20 sm:pb-0 p-6 relative">
 						<Glow />
 
