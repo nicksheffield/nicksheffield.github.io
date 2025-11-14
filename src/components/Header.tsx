@@ -3,6 +3,7 @@ import { GithubIcon, MailIcon, PhoneIcon } from 'lucide-react'
 import Image from 'next/image'
 import { buttonVariants } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/ThemeToggle'
+import { cn } from '@/lib/utils'
 
 export const Header = () => {
 	return (
@@ -18,7 +19,7 @@ export const Header = () => {
 					/>
 				</div>
 
-				<div className="absolute top-0 right-0 z-10">
+				<div className="absolute top-0 right-0 z-10 print:hidden">
 					<ThemeToggle />
 				</div>
 			</div>
@@ -27,13 +28,16 @@ export const Header = () => {
 				<div className="text-3xl font-bold">Nick Sheffield</div>
 				<div className="text-lg">Web Software Engineer</div>
 
-				<div className="flex gap-x-2 mt-1 flex-wrap gap-y-3">
+				<div className="flex gap-x-2 mt-1 flex-wrap gap-y-3 print:gap-x-4">
 					<Link
 						href="https://github.com/nicksheffield"
-						className={buttonVariants({
-							variant: 'secondary',
-							size: 'xs',
-						})}
+						className={cn(
+							buttonVariants({
+								variant: 'secondary',
+								size: 'xs',
+							}),
+							'print:inset-ring-0! print:px-0'
+						)}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -43,10 +47,13 @@ export const Header = () => {
 
 					<Link
 						href="mailto:nick@nicksheffield.com"
-						className={buttonVariants({
-							variant: 'secondary',
-							size: 'xs',
-						})}
+						className={cn(
+							buttonVariants({
+								variant: 'secondary',
+								size: 'xs',
+							}),
+							'print:inset-ring-0! print:px-0'
+						)}
 					>
 						<MailIcon className="size-4" />
 						nick@nicksheffield.com
@@ -54,10 +61,13 @@ export const Header = () => {
 
 					<Link
 						href="tel:+447493894593"
-						className={buttonVariants({
-							variant: 'secondary',
-							size: 'xs',
-						})}
+						className={cn(
+							buttonVariants({
+								variant: 'secondary',
+								size: 'xs',
+							}),
+							'print:inset-ring-0! print:px-0'
+						)}
 					>
 						<PhoneIcon className="size-4" />
 						+447 4938 94593
