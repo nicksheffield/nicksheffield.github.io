@@ -11,7 +11,7 @@ export const Header = () => {
 			<div className="shrink-0 flex flex-row justify-between items-start">
 				<div className="w-[120px] h-[120px] overflow-hidden rounded-sm relative bg-radial from-primary-600 from-40% to-primary-900">
 					<Image
-						src="/nick-removebg-preview.png"
+						src="/assets/images/nick-removebg-preview.png"
 						alt="Nick Sheffield"
 						width={700}
 						height={700}
