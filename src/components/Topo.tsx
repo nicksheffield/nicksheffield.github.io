@@ -508,7 +508,7 @@ const AnimatedPath = ({
 }: HTMLAttributes<SVGPathElement> & { d: string }) => {
 	return (
 		<path
-			className="stroke-primary-900/50 fill-none"
+			className="stroke-primary-600/50 dark:stroke-primary-600/20 fill-none"
 			style={{
 				strokeMiterlimit: 10,
 				strokeLinecap: 'round',

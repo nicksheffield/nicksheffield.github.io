@@ -19,8 +19,6 @@ export const Header = () => {
 				</div>
 
 				<div className="absolute top-0 right-0 z-10">
-					{/* <AntsSwitch /> */}
-					{/* <ThemeSwitch /> */}
 					<ThemeToggle />
 				</div>
 			</div>
@@ -33,7 +31,7 @@ export const Header = () => {
 					<Link
 						href="https://github.com/nicksheffield"
 						className={buttonVariants({
-							variant: 'soft',
+							variant: 'secondary',
 							size: 'xs',
 						})}
 						target="_blank"
@@ -46,7 +44,7 @@ export const Header = () => {
 					<Link
 						href="mailto:nick@nicksheffield.com"
 						className={buttonVariants({
-							variant: 'soft',
+							variant: 'secondary',
 							size: 'xs',
 						})}
 					>
@@ -57,7 +55,7 @@ export const Header = () => {
 					<Link
 						href="tel:+447493894593"
 						className={buttonVariants({
-							variant: 'soft',
+							variant: 'secondary',
 							size: 'xs',
 						})}
 					>

@@ -18,7 +18,7 @@ export const Footer = () => {
 				</div>
 				{pathname === '/' && (
 					<Button
-						variant="soft"
+						variant="secondary"
 						onClick={() => {
 							print()
 						}}

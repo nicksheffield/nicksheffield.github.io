@@ -48,7 +48,7 @@ export function ThemeToggle() {
 	return (
 		<Button
 			type="button"
-			variant="soft"
+			variant="secondary"
 			size="icon"
 			aria-label={
 				mounted ? `Switch to ${otherTheme} theme` : 'Toggle theme'
