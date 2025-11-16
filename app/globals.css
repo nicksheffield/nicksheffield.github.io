@@ -180,8 +180,6 @@ nextjs-portal {
 	display: none;
 }
 
-@keyframes dash-thin {
-	to {
-		stroke-dashoffset: 0;
-	}
+@page {
+	margin: 0.4in;
 }

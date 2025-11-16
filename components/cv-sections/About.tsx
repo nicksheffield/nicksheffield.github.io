@@ -23,32 +23,34 @@
 	</div>
 </div> */
 
-import { Section, SectionBody } from '@/components/Section'
+import { Section, SectionBody, SectionHeading } from '@/components/Section'
 
 export const About = () => {
 	return (
-		<Section>
-			{/* <SectionHeading>About</SectionHeading> */}
+		<Section className="gap-2">
+			<h2 className="hidden text-sm font-medium print:block">About</h2>
 
-			<SectionBody className="gap-6 print:text-sm leading-7 print:leading-normal text-pretty">
+			<SectionBody className="gap-6 leading-7 text-pretty print:gap-2 print:text-xs print:leading-normal print:opacity-70">
 				<p className="text-muted-foreground">
-					<span className="font-medium text-foreground">
+					<span className="text-foreground font-medium print:font-normal">
 						Hi, I'm Nick
 					</span>
 					. I'm a seasoned front-end software developer with over 16
-					years of hands-on coding experience, specializing in
-					React.js, Node.js. I'm driven by a deep curiosity and a
+					years of hands-on coding experience, these days specializing
+					in UI development using React.js, Typescript and TailwindCSS
+					among other things.{' '}
+					{/*I'm driven by a deep curiosity and a
 					constant desire to learn — always exploring new tools,
 					frameworks, and best practices to stay ahead in a
-					fast-moving industry.
+					fast-moving industry.*/}
 				</p>
 
-				<p className="text-muted-foreground">
+				{/* <p className="text-muted-foreground">
 					In addition to my technical proficiency, I'm also an
 					experienced team leader and mentor with experience bringing
 					a passion for sharing knowledge, and fostering a
 					collaborative, learning-driven environment.
-				</p>
+				</p> */}
 
 				<p className="text-muted-foreground">
 					Originally from New Zealand, I've recently relocated to the

@@ -1,7 +1,7 @@
 import { projects } from '@/lib/data'
 import { ShowcasePage } from '@/components/ShowcasePage'
 
-const project = projects.find((x) => x.key === 'icra')
+const project = projects.find((x) => x.key === 'kaizen')
 
 const Page = () => {
 	return project ? (

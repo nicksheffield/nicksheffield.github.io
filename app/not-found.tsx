@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const NotFound = () => {
 	return (
-		<div className="flex flex-col gap-6 px-6 py-4 rounded-md bg-muted/50">
+		<div className="bg-muted/50 flex flex-col gap-6 rounded-md px-6 py-4">
 			<h2 className="text-lg font-semibold">Not Found</h2>
 
 			<div className="flex flex-col gap-4">

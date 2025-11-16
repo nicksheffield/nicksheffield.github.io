@@ -21,7 +21,7 @@ export const Topo = ({ className }: { className?: string }) => {
 			className={cn(
 				'opacity-0 transition-opacity duration-1000',
 				mounted && 'opacity-100',
-				className
+				className,
 			)}
 			preserveAspectRatio="xMinYMin slice"
 		>

@@ -12,8 +12,8 @@ export const Footer = () => {
 		<div className="flex flex-col gap-16 pb-16 print:hidden">
 			<Separator />
 
-			<div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-				<div className="text-sm font-medium text-muted-foreground/50">
+			<div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+				<div className="text-muted-foreground/50 text-sm font-medium">
 					&copy; Nick Sheffield 2025
 				</div>
 				{pathname === '/' && (
@@ -24,7 +24,7 @@ export const Footer = () => {
 						}}
 					>
 						<PrinterIcon />
-						Print resume as PDF
+						Print CV as PDF
 					</Button>
 				)}
 			</div>

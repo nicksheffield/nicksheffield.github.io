@@ -1,25 +1,13 @@
-import { buttonVariants } from '@/components/ui/button'
-import { ArrowLeftIcon } from 'lucide-react'
-import Link from 'next/link'
+import { projects } from '@/lib/data'
+import { ShowcasePage } from '@/components/ShowcasePage'
+
+const project = projects.find((x) => x.key === 'xpo-showtime')
 
 const Page = () => {
-	return (
-		<div className="flex flex-col gap-8">
-			<div className="flex">
-				<Link
-					href="/"
-					className={buttonVariants({
-						variant: 'secondary',
-						size: 'sm',
-					})}
-				>
-					<ArrowLeftIcon className="size-4" />
-					Back to CV
-				</Link>
-			</div>
-
-			<div className="text-lg font-semibold">XPO Showtime Showcase</div>
-		</div>
+	return project ? (
+		<ShowcasePage project={project} />
+	) : (
+		<div className="text-muted-foreground">Showcase not found</div>
 	)
 }
 

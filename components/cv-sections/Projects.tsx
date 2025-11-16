@@ -7,10 +7,12 @@ import Link from 'next/link'
 
 export const Projects = () => {
 	return (
-		<Section>
-			<SectionHeading>Projects</SectionHeading>
+		<Section className="print:gap-2">
+			<SectionHeading className="print:text-sm print:font-medium">
+				Projects
+			</SectionHeading>
 
-			<SectionBody className="gap-16">
+			<SectionBody className="gap-16 print:gap-6">
 				{projects.map((project) => (
 					<ProjectsItem key={project.name} project={project} />
 				))}
@@ -23,45 +25,40 @@ export const ProjectsItem = ({ project }: { project: Project }) => {
 	return (
 		<div
 			key={project.name}
-			className="flex flex-col gap-y-2 break-inside-avoid group/block relative"
+			className={cn(
+				'group/block relative flex break-inside-avoid flex-col gap-y-2',
+				project.printHide && 'print:hidden',
+			)}
 		>
-			<div className="absolute -inset-x-5 -inset-y-4 bg-muted/0 group-hover/block:bg-muted/50 transition-[background-color,scale] group-hover/block:scale-100 scale-90 print:hidden pointer-events-none -z-10 rounded-2xl" />
+			<div className="bg-muted/0 group-hover/block:bg-muted/50 pointer-events-none absolute -inset-x-5 -inset-y-4 -z-10 scale-90 rounded-2xl transition-[background-color,scale] group-hover/block:scale-100 print:hidden" />
 
 			<div className="flex flex-col gap-0">
-				{/* <div className="relative z-10 order-first flex items-center text-sm text-muted-foreground/50 pl-3.5">
-					<span
-						className="absolute inset-y-0 left-0 flex items-center"
-						aria-hidden="true"
-					>
-						<span className="h-4 w-0.5 rounded-full bg-foreground/20" />
-					</span>
-					{project.type}, {project.dates}
-				</div>
+				<div className="flex items-center gap-3.5 print:text-xs">
+					<div className="font-medium print:font-normal">
+						{project.name}
+					</div>
 
-				<div className="mt-3 text-base font-semibold tracking-tight text-foreground">
-					{project.name}
-				</div> */}
+					<span className="bg-foreground/20 h-4 w-0.5 rounded-full print:hidden" />
 
-				<div className="flex items-center gap-3.5">
-					<div className="font-medium">{project.name}</div>
-
-					<span className="h-4 w-0.5 rounded-full bg-foreground/20" />
-
-					<div className="text-muted-foreground/50">
+					<div className="text-muted-foreground/50 print:opacity-70">
 						{project.type}, {project.dates}
 					</div>
 				</div>
 
-				<div className="mt-2 relative z-10 text-sm text-muted-foreground text-pretty leading-6">
-					{project.description}
+				<div className="text-muted-foreground relative z-10 mt-2 flex flex-col gap-3 text-sm leading-6 text-pretty print:text-xs print:leading-normal print:opacity-70">
+					{project.description.map((x, i) => (
+						<p key={i} className={cn(i !== 0 && 'print:hidden')}>
+							{x}
+						</p>
+					))}
 				</div>
 
-				<div className="mt-4 flex flex-col sm:flex-row justify-between gap-4">
-					<div className="flex items-center gap-4 flex-wrap">
+				<div className="mt-4 flex flex-col justify-between gap-4 sm:flex-row print:hidden">
+					<div className="flex flex-wrap items-center gap-4">
 						{project.technologies.map((technology) => (
 							<div
 								key={technology}
-								className="font-medium text-xs text-primary-500"
+								className="text-primary-500 text-xs font-medium"
 							>
 								{technology}
 							</div>
@@ -76,7 +73,7 @@ export const ProjectsItem = ({ project }: { project: Project }) => {
 									buttonVariants({
 										variant: 'link',
 										size: 'sm',
-									})
+									}),
 								)}
 								href={project.projectLink}
 								target="_blank"
@@ -93,7 +90,7 @@ export const ProjectsItem = ({ project }: { project: Project }) => {
 									buttonVariants({
 										variant: 'link',
 										size: 'sm',
-									})
+									}),
 								)}
 								href={project.showcaseLink}
 							>

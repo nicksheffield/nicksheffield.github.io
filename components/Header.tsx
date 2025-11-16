@@ -7,15 +7,15 @@ import { cn } from '@/lib/utils'
 
 export const Header = () => {
 	return (
-		<div className="flex sm:items-center sm:flex-row flex-col gap-6 print:mt-8 relative">
-			<div className="shrink-0 flex flex-row justify-between items-start">
-				<div className="w-[120px] h-[120px] overflow-hidden rounded-sm relative bg-radial from-primary-600 from-40% to-primary-900">
+		<div className="relative flex flex-col gap-6 sm:flex-row sm:items-center print:flex-row-reverse print:items-start">
+			<div className="flex shrink-0 flex-row items-start justify-between">
+				<div className="from-primary-600 to-primary-900 relative size-[120px] overflow-hidden rounded-sm bg-radial from-40% print:size-[60px]">
 					<Image
 						src="/assets/images/nick-removebg-preview.png"
 						alt="Nick Sheffield"
 						width={700}
 						height={700}
-						className="absolute w-[170px] h-[170px] max-w-[initial] aspect-square -top-2 -left-7"
+						className="absolute -top-2 -left-7 aspect-square size-[170px] max-w-[initial] print:-left-3 print:size-[84px]"
 					/>
 				</div>
 
@@ -24,11 +24,16 @@ export const Header = () => {
 				</div>
 			</div>
 
-			<div className="flex-1 flex flex-col gap-2">
-				<div className="text-3xl font-bold">Nick Sheffield</div>
-				<div className="text-lg">Web Software Engineer</div>
+			<div className="flex flex-1 flex-col gap-2 print:gap-0">
+				<div className="text-3xl font-bold print:text-lg print:font-normal">
+					Nick Sheffield
+				</div>
 
-				<div className="flex gap-x-2 mt-1 flex-wrap gap-y-3 print:gap-x-4">
+				<div className="print:text-muted-foreground text-lg print:text-sm print:opacity-70">
+					Web Software Engineer
+				</div>
+
+				<div className="mt-1 flex flex-wrap gap-x-2 gap-y-3 print:hidden print:gap-x-4">
 					<Link
 						href="https://github.com/nicksheffield"
 						className={cn(
@@ -36,7 +41,7 @@ export const Header = () => {
 								variant: 'secondary',
 								size: 'xs',
 							}),
-							'print:inset-ring-0! print:px-0'
+							'print:text-muted-foreground print:p-0 print:font-normal print:inset-ring-0!',
 						)}
 						target="_blank"
 						rel="noopener noreferrer"
@@ -52,7 +57,7 @@ export const Header = () => {
 								variant: 'secondary',
 								size: 'xs',
 							}),
-							'print:inset-ring-0! print:px-0'
+							'print:text-muted-foreground print:p-0 print:font-normal print:inset-ring-0!',
 						)}
 					>
 						<MailIcon className="size-4" />
@@ -66,12 +71,16 @@ export const Header = () => {
 								variant: 'secondary',
 								size: 'xs',
 							}),
-							'print:inset-ring-0! print:px-0'
+							'print:text-muted-foreground print:p-0 print:font-normal print:inset-ring-0!',
 						)}
 					>
 						<PhoneIcon className="size-4" />
 						+447 4938 94593
 					</Link>
+				</div>
+
+				<div className="text-muted-foreground hidden text-sm print:block print:opacity-70">
+					nicksheffield.com
 				</div>
 			</div>
 		</div>

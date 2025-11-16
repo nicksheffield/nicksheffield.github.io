@@ -2,9 +2,9 @@
 
 import { Button } from '@/components/ui/button'
 import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type ComponentPropsWithoutRef } from 'react'
 
-function SunIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function SunIcon(props: ComponentPropsWithoutRef<'svg'>) {
 	return (
 		<svg
 			viewBox="0 0 24 24"
@@ -23,7 +23,7 @@ function SunIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 	)
 }
 
-function MoonIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function MoonIcon(props: ComponentPropsWithoutRef<'svg'>) {
 	return (
 		<svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
 			<path
@@ -54,13 +54,13 @@ export function ThemeToggle() {
 				mounted ? `Switch to ${otherTheme} theme` : 'Toggle theme'
 			}
 			onClick={() => setTheme(otherTheme)}
-			className="flex flex-col relative justify-start items-stretch gap-0 overflow-hidden"
+			className="relative flex flex-col items-stretch justify-start gap-0 overflow-hidden"
 		>
-			<div className="size-9 shrink-0 flex items-center justify-center transition-transform duration-200 -translate-y-full dark:translate-y-0">
-				<MoonIcon className="size-5! stroke-foreground fill-foreground/20" />
+			<div className="flex size-9 shrink-0 -translate-y-full items-center justify-center transition-transform duration-200 dark:translate-y-0">
+				<MoonIcon className="stroke-foreground fill-foreground/20 size-5!" />
 			</div>
-			<div className="size-9 shrink-0 flex items-center justify-center transition-transform duration-200 -translate-y-full dark:translate-y-0">
-				<SunIcon className="size-5! stroke-foreground fill-none" />
+			<div className="flex size-9 shrink-0 -translate-y-full items-center justify-center transition-transform duration-200 dark:translate-y-0">
+				<SunIcon className="stroke-foreground size-5! fill-none" />
 			</div>
 		</Button>
 	)

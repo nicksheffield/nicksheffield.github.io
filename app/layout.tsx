@@ -34,10 +34,10 @@ export default function RootLayout({
 
 			<body>
 				<ThemeProvider>
-					<div className="min-h-screen print:p-0 sm:p-20 sm:pb-0 p-6 relative">
+					<div className="relative min-h-screen p-6 sm:p-20 sm:pb-0 print:p-0">
 						<Glow />
 
-						<main className="flex flex-col gap-24 print:gap-8 mx-auto max-w-2xl print:max-w-auto">
+						<main className="print:max-w-auto mx-auto flex max-w-2xl flex-col gap-8 print:mx-0 print:gap-8">
 							<Header />
 
 							{children}
