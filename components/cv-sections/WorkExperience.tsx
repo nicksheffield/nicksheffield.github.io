@@ -3,7 +3,6 @@ import {
 	workExperiences,
 	type WorkExperience as WorkExperienceType,
 } from '@/lib/data'
-import { cn } from '@/lib/utils'
 import { format } from 'date-fns'
 
 export const WorkExperience = () => {
@@ -45,12 +44,7 @@ const WorkExperienceItem = ({
 				/>
 			)}
 
-			<span
-				className={cn(
-					'bg-primary-600',
-					'ring-primary-600/20 z-20 flex size-4 shrink-0 items-center justify-center rounded-full ring-8 print:hidden',
-				)}
-			/>
+			<span className="bg-primary-600 ring-primary-600/20 z-20 flex size-4 shrink-0 items-center justify-center rounded-full ring-8 hover:animate-ping print:hidden" />
 
 			<div className="group relative -mt-1 flex flex-1 flex-col gap-2 print:mt-0">
 				<div className="bg-muted/0 group-hover:bg-muted/50 pointer-events-none absolute -inset-x-4 -inset-y-4 -z-10 scale-95 rounded-2xl transition-[background-color,scale] group-hover:scale-100 print:hidden" />
