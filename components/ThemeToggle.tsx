@@ -57,7 +57,7 @@ export function ThemeToggle() {
 			className="relative flex flex-col items-stretch justify-start gap-0 overflow-hidden"
 		>
 			<div className="flex size-9 shrink-0 -translate-y-full items-center justify-center transition-transform duration-200 dark:translate-y-0">
-				<MoonIcon className="stroke-foreground fill-foreground/20 size-5!" />
+				<MoonIcon className="stroke-foreground fill-foreground/50 size-5!" />
 			</div>
 			<div className="flex size-9 shrink-0 -translate-y-full items-center justify-center transition-transform duration-200 dark:translate-y-0">
 				<SunIcon className="stroke-foreground size-5! fill-none" />
