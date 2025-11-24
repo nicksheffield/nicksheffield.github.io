@@ -1,5 +1,5 @@
 import { Separator } from '@/components/ui/separator'
-import { DownloadIcon, FileUserIcon } from 'lucide-react'
+import { DownloadIcon } from 'lucide-react'
 import { buttonVariants } from '@/components/ui/button'
 
 export const Footer = () => {
@@ -14,7 +14,6 @@ export const Footer = () => {
 
 				<a
 					className={buttonVariants({ variant: 'link' })}
-					// href="https://github.com/nicksheffield/nicksheffield.github.io"
 					href="/nick-sheffield-resume.pdf"
 					download
 				>
