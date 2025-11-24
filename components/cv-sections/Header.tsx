@@ -9,7 +9,7 @@ export const Header = () => {
 	return (
 		<div className="relative flex flex-col gap-6 sm:flex-row sm:items-center print:flex-row-reverse print:items-start">
 			<div className="flex shrink-0 flex-row items-start justify-between">
-				<div className="from-primary-600 to-primary-900 relative size-[120px] overflow-hidden rounded-xl bg-radial from-40% [corner-shape:superellipse(2)] print:size-[60px]">
+				<div className="from-primary-600 to-primary-900 relative size-[120px] overflow-hidden rounded-[3em] bg-radial from-40% [corner-shape:superellipse(3)] not-supports-corner-shape:rounded-md print:size-[60px]">
 					<Image
 						src="/assets/images/nick-removebg-preview.png"
 						alt="Nick Sheffield"
