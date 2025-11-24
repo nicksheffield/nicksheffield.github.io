@@ -1,13 +1,13 @@
-import { projects } from '@/lib/data'
+import { experiments } from '@/lib/data'
 import { ShowcasePage } from '@/components/ShowcasePage'
 
-const project = projects.find((x) => x.key === 'kaizen')
+const project = experiments.find((x) => x.key === 'wordhack')
 
 const Page = () => {
 	return project ? (
 		<ShowcasePage project={project} />
 	) : (
-		<div className="text-muted-foreground">Showcase not found</div>
+		<div className="text-muted-foreground">Project not found</div>
 	)
 }
 

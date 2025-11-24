@@ -1,3 +1,5 @@
+import { ReactNode } from 'react'
+
 export type WorkExperience = {
 	company: string
 	companyLink: string
@@ -65,9 +67,9 @@ export type Project = {
 	projectLink?: string
 	showcaseLink?: string
 	printHide?: boolean
-	type: string
+	type?: string
 	dates: string
-	description: string[]
+	description: ReactNode[]
 	technologies: string[]
 	images?: ImageItem[]
 }
@@ -81,72 +83,6 @@ type ImageItem = {
 }
 
 export const projects: Project[] = [
-	{
-		key: 'kaizen',
-		name: 'Kaizen',
-		type: 'Personal Project',
-		showcaseLink: '/showcase/kaizen',
-		dates: '2023 - 2025',
-		description: [
-			'A code generator that generates a GraphQL API based on a database schema that you design in a visual editor. It is a browser-based application, but it works by writing files to your file system, so you can view/edit the generated code from your local editor. It comes with built-in support for docker, database migrations, emails, authentication, monorepos and more.',
-		],
-		technologies: [
-			'React',
-			'Node.js',
-			'Hono',
-			'GraphQL',
-			'better-auth',
-			'Turborepo',
-		],
-		printHide: true,
-		images: [
-			{
-				src: '/assets/showcase/kaizen/kaizen-erd.png',
-				alt: 'Kaizen screenshot',
-				description: [
-					'A view of the ERD designer in Kaizen. It allows you to create as many tables as you like, and then add fields and relationships between them.',
-				],
-				width: 3024,
-				height: 1989,
-			},
-			{
-				src: '/assets/showcase/kaizen/kaizen-erd-field.png',
-				alt: 'Kaizen screenshot',
-				description: [
-					'A view of the field editor in the ERD designer.',
-				],
-				width: 3024,
-				height: 1989,
-			},
-			{
-				src: '/assets/showcase/kaizen/kaizen-erd-relationship.png',
-				alt: 'Kaizen screenshot',
-				description: [
-					'A view of the relationship editor in the ERD designer.',
-				],
-				width: 3024,
-				height: 1989,
-			},
-			{
-				src: '/assets/showcase/kaizen/kaizen-auth.png',
-				alt: 'Kaizen screenshot',
-				description: [
-					'The authentication settings for this kaizen project.',
-				],
-				width: 3024,
-				height: 1989,
-			},
-			{
-				src: '/assets/showcase/kaizen/kaizen-env.png',
-				alt: 'Kaizen screenshot',
-				description: [
-					'The environment settings for this kaizen project. It allows you to set up email via Resend, S3 file storage credentials, and a Sentry DSN',
-				],
-				width: 3024,
-				height: 1989,
-			},
-		],
-	},
 	{
 		key: 'xpo-showtime',
 		name: 'XPO Showtime',
@@ -312,5 +248,185 @@ export const projects: Project[] = [
 		],
 		technologies: ['Ember', 'Sass', 'jQuery'],
 		printHide: true,
+	},
+]
+
+export const experiments: Project[] = [
+	{
+		key: 'kaizen',
+		name: 'Kaizen',
+		type: 'Personal Project',
+		showcaseLink: '/experiments/kaizen',
+		projectLink: 'https://kz-app.com',
+		dates: '2023 - 2025',
+		description: [
+			'A code generator that generates a GraphQL API based on a database schema that you design in a visual editor. It is a browser-based application, but it works by writing files to your file system, so you can view/edit the generated code from your local editor. It comes with built-in support for docker, database migrations, emails, authentication, monorepos and more.',
+		],
+		technologies: [
+			'React',
+			'Node.js',
+			'Hono',
+			'GraphQL',
+			'better-auth',
+			'Turborepo',
+		],
+		images: [
+			{
+				src: '/assets/experiments/kaizen/kaizen-erd.png',
+				alt: 'Kaizen screenshot',
+				description: [
+					'A view of the ERD designer in Kaizen. It allows you to create as many tables as you like, and then add fields and relationships between them.',
+				],
+				width: 3024,
+				height: 1989,
+			},
+			{
+				src: '/assets/experiments/kaizen/kaizen-erd-field.png',
+				alt: 'Kaizen screenshot',
+				description: [
+					'A view of the field editor in the ERD designer.',
+				],
+				width: 3024,
+				height: 1989,
+			},
+			{
+				src: '/assets/experiments/kaizen/kaizen-erd-relationship.png',
+				alt: 'Kaizen screenshot',
+				description: [
+					'A view of the relationship editor in the ERD designer.',
+				],
+				width: 3024,
+				height: 1989,
+			},
+			{
+				src: '/assets/experiments/kaizen/kaizen-auth.png',
+				alt: 'Kaizen screenshot',
+				description: [
+					'The authentication settings for this kaizen project.',
+				],
+				width: 3024,
+				height: 1989,
+			},
+			{
+				src: '/assets/experiments/kaizen/kaizen-env.png',
+				alt: 'Kaizen screenshot',
+				description: [
+					'The environment settings for this kaizen project. It allows you to set up email via Resend, S3 file storage credentials, and a Sentry DSN',
+				],
+				width: 3024,
+				height: 1989,
+			},
+		],
+	},
+	{
+		key: 'elementtd2',
+		name: 'Element TD2 Tower Table',
+		showcaseLink: '/experiments/elementtd2',
+		projectLink: 'https://nicksheffield.com/elementtd2-towertable/',
+		dates: '2023',
+		type: '',
+		description: [
+			'An interactive browser version of the "tower table" from the game Element TD 2. It allows you to pre-plan your element picks outside of the game and see how the build will develop over the course of the game.',
+			'I just made it for a bit of fun, and the logic needed to determine which towers are dependent on each other was more complex than I expected, and pretty fun to figure out. I also added an overlay that explains which towers are dependents, which was a fun SVG challenge.',
+		],
+		technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'SVG'],
+		images: [
+			{
+				src: '/assets/experiments/elementtd2/elementtd2.png',
+				alt: 'Element TD 2 Tower Table screenshot',
+				description: [
+					'You can select any tower to auto-choose the necessary element picks, or just select those elements to see what they enable. To the top right of the table, you can see the sequence of picks and the level at which they are done.',
+				],
+				width: 3024,
+				height: 1898,
+			},
+			{
+				src: '/assets/experiments/elementtd2/elementtd2-overlay.png',
+				alt: 'Element TD 2 Tower Table screenshot',
+				description: [
+					'If you turn on the overlay, you can see lines that show which towers are dependent on each other. This was originally added for debugging, but I thought it was actually pretty useful. In this screenshot I am hovering the "Impulse" tower.',
+				],
+				width: 3024,
+				height: 1898,
+			},
+			{
+				src: '/assets/experiments/elementtd2/elementtd2-build.png',
+				alt: 'Element TD 2 Tower Table screenshot',
+				description: [
+					'An example of a full game build. I aimed to have the Mushroom tower as well as both Root and Muck, and was able to figure out the right build by using this app.',
+				],
+				width: 3024,
+				height: 1898,
+			},
+			{
+				src: '/assets/experiments/elementtd2/elementtd2-light.png',
+				alt: 'Element TD 2 Tower Table screenshot',
+				description: [
+					'It also has light mode in case you are in a bright room or something.',
+				],
+				width: 3024,
+				height: 1898,
+			},
+		],
+	},
+	{
+		key: 'wordhack',
+		name: 'Wordhack',
+		showcaseLink: '/experiments/wordhack',
+		projectLink: 'https://nicksheffield.com/wordhack/',
+		dates: '2023',
+		type: '',
+		description: [
+			<>
+				A browser game based on the hacking minigame from Fallout 4. The
+				game uses a dictionary of 5 letter words derived from the{' '}
+				<a
+					href="https://www.npmjs.com/package/word-list"
+					target="_blank"
+					rel="noopener noreferrer"
+					className="hover:text-foreground underline underline-offset-2 transition-colors"
+				>
+					word-list
+				</a>{' '}
+				npm package.
+			</>,
+		],
+		technologies: ['React', 'TypeScript', 'Tailwind CSS', 'shadcn/ui'],
+		images: [
+			{
+				src: '/assets/experiments/wordhack/wordhack.png',
+				alt: 'Wordhack screenshot',
+				description: [
+					'You play the game by trying to find the correct word. When you click each a word that is incorrect, you use up a guess and the game tells you how similar the word is to the correct answer. The correctness is determined by same letters being in the same position.',
+				],
+				width: 1772,
+				height: 1262,
+			},
+			{
+				src: '/assets/experiments/wordhack/wordhack-win.png',
+				alt: 'Wordhack screenshot',
+				description: ['The game ends when you find the correct word.'],
+				width: 1772,
+				height: 1262,
+			},
+			{
+				src: '/assets/experiments/wordhack/wordhack-hard.png',
+				alt: 'Wordhack screenshot',
+				description: [
+					'Hard mode includes more possible words, and less guesses.',
+				],
+				width: 1772,
+				height: 1262,
+			},
+			{
+				src: '/assets/experiments/wordhack/wordhack-light.png',
+				alt: 'Wordhack screenshot',
+				description: [
+					'The game also has a light mode if you are into that kind of thing.',
+				],
+				width: 1772,
+				height: 1262,
+			},
+		],
 	},
 ]

@@ -13,6 +13,8 @@ const inter = Inter({
 		'500', // medium
 		'600', // semibold
 		'700', // bold
+		'800', // extrabold
+		'900', // black
 	],
 	subsets: ['latin'],
 })

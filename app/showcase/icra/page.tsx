@@ -7,7 +7,7 @@ const Page = () => {
 	return project ? (
 		<ShowcasePage project={project} />
 	) : (
-		<div className="text-muted-foreground">Showcase not found</div>
+		<div className="text-muted-foreground">Project not found</div>
 	)
 }
 

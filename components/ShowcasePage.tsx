@@ -1,3 +1,5 @@
+'use client'
+
 import { buttonVariants } from '@/components/ui/button'
 import {
 	Carousel,
@@ -7,27 +9,49 @@ import {
 	CarouselPrevious,
 } from '@/components/ui/carousel'
 import { Project } from '@/lib/data'
-import { ArrowLeftIcon } from 'lucide-react'
+import { ArrowLeftIcon, ExternalLinkIcon } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+import { cn } from '@/lib/utils'
 
 export const ShowcasePage = ({ project }: { project: Project }) => {
-	return (
-		<div className="flex flex-col gap-8">
-			<div className="flex">
-				<Link
-					href="/"
-					className={buttonVariants({
-						variant: 'link',
-						size: 'sm',
-					})}
-				>
-					<ArrowLeftIcon className="size-4" />
-					Back to CV
-				</Link>
-			</div>
+	const router = useRouter()
 
-			<div className="text-2xl font-semibold">{project?.name}</div>
+	return (
+		<div className="mt-8 flex flex-col gap-8">
+			<div className="flex items-center justify-between">
+				<div className="flex items-center gap-4">
+					<Link
+						href="/"
+						onClick={router.back}
+						className={cn(
+							buttonVariants({
+								variant: 'secondary',
+								size: 'icon',
+							}),
+							'rounded-full',
+						)}
+					>
+						<ArrowLeftIcon className="size-4" />
+					</Link>
+					<div className="text-2xl font-semibold">
+						{project?.name}
+					</div>
+				</div>
+
+				{project.projectLink && (
+					<a
+						href={project.projectLink}
+						target="_blank"
+						rel="noopener noreferrer"
+						className={buttonVariants({ variant: 'link' })}
+					>
+						View project
+						<ExternalLinkIcon />
+					</a>
+				)}
+			</div>
 
 			<div className="flex flex-col gap-6">
 				{project?.description.map((x, i) => (
@@ -37,7 +61,7 @@ export const ShowcasePage = ({ project }: { project: Project }) => {
 				))}
 			</div>
 
-			{project.images && (
+			{(project.images?.length || 0) > 0 && (
 				<div>
 					<Carousel className="-mx-2 w-full">
 						<div className="flex flex-row justify-end gap-2 px-2">
@@ -45,7 +69,7 @@ export const ShowcasePage = ({ project }: { project: Project }) => {
 							<CarouselNext />
 						</div>
 						<CarouselContent>
-							{project.images.map((image, index) => (
+							{project.images?.map((image, index) => (
 								<CarouselItem key={index}>
 									<div className="flex flex-col gap-4 p-2">
 										<a

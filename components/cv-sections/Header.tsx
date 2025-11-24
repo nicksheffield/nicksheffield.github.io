@@ -33,12 +33,12 @@ export const Header = () => {
 					Web Software Engineer
 				</div>
 
-				<div className="mt-1 flex flex-wrap gap-x-2 gap-y-3 print:hidden print:gap-x-4">
+				<div className="mt-1 flex flex-wrap gap-x-6 gap-y-3 print:hidden print:gap-x-4">
 					<Link
 						href="https://github.com/nicksheffield"
 						className={cn(
 							buttonVariants({
-								variant: 'secondary',
+								variant: 'link',
 								size: 'xs',
 							}),
 							'print:text-muted-foreground print:p-0 print:font-normal print:inset-ring-0!',
@@ -54,7 +54,7 @@ export const Header = () => {
 						href="mailto:nick@nicksheffield.com"
 						className={cn(
 							buttonVariants({
-								variant: 'secondary',
+								variant: 'link',
 								size: 'xs',
 							}),
 							'print:text-muted-foreground print:p-0 print:font-normal print:inset-ring-0!',
@@ -68,7 +68,7 @@ export const Header = () => {
 						href="tel:+447493894593"
 						className={cn(
 							buttonVariants({
-								variant: 'secondary',
+								variant: 'link',
 								size: 'xs',
 							}),
 							'print:text-muted-foreground print:p-0 print:font-normal print:inset-ring-0!',
