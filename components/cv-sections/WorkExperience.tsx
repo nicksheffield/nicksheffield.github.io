@@ -35,7 +35,7 @@ const WorkExperienceItem = ({
 	return (
 		<div
 			key={experience.company}
-			className="relative flex break-inside-avoid flex-row gap-8"
+			className="group relative flex break-inside-avoid flex-row gap-8"
 		>
 			{!isLast && (
 				<span
@@ -44,18 +44,12 @@ const WorkExperienceItem = ({
 				/>
 			)}
 
-			<span className="bg-primary-600 ring-primary-600/20 z-20 flex size-4 shrink-0 items-center justify-center rounded-full ring-8 hover:animate-ping print:hidden" />
+			<span className="bg-primary-600 ring-primary-600/20 z-20 flex size-4 shrink-0 items-center justify-center rounded-full ring-8 transition-[scale] group-hover:scale-120 print:hidden" />
 
-			<div className="group relative -mt-1 flex flex-1 flex-col gap-2 print:mt-0">
+			<div className="relative -mt-1 flex flex-1 flex-col gap-2 print:mt-0">
 				<div className="bg-muted/0 group-hover:bg-muted/50 pointer-events-none absolute -inset-x-4 -inset-y-4 -z-10 scale-95 rounded-2xl transition-[background-color,scale] group-hover:scale-100 print:hidden" />
 
 				<div className="flex flex-row gap-6">
-					{/* <div className="text-muted-foreground/50 hidden shrink-0 text-xs print:block">
-						{experience.dates
-							.map((x) => format(x, 'yyyy'))
-							.join(' - ')}
-					</div> */}
-
 					<div className="flex flex-col gap-y-4 print:gap-y-0">
 						<div className="flex flex-col justify-between sm:flex-row print:justify-start print:text-xs print:leading-normal">
 							<div className="gap-x-4 print:flex">

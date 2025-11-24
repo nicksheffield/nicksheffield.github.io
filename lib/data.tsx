@@ -278,7 +278,7 @@ export const experiments: Project[] = [
 	{
 		key: 'kaizen',
 		name: 'Kaizen',
-		type: 'Personal Project',
+		// type: 'Personal Project',
 		showcaseLink: '/experiments/kaizen',
 		projectLink: 'https://kz-app.com',
 		dates: '2023 - 2025',
