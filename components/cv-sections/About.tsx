@@ -23,7 +23,7 @@
 	</div>
 </div> */
 
-import { Section, SectionBody, SectionHeading } from '@/components/Section'
+import { Section, SectionBody } from '@/components/Section'
 
 export const About = () => {
 	return (
