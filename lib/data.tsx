@@ -1,5 +1,18 @@
 import { ReactNode } from 'react'
 
+const Link = ({ children, href }: { children: ReactNode; href: string }) => {
+	return (
+		<a
+			href={href}
+			target="_blank"
+			rel="noopener noreferrer"
+			className="hover:text-foreground underline underline-offset-2 transition-colors"
+		>
+			{children}
+		</a>
+	)
+}
+
 export type WorkExperience = {
 	company: string
 	companyLink: string
@@ -61,6 +74,16 @@ export const skills: string[] = [
 	'Git',
 ]
 
+// I don't love this, but I think I need to overhaul the whole way I'm handling this data...
+type DescriptionObj = { noExerpt: boolean; content: ReactNode }
+type Description = ReactNode | DescriptionObj
+
+export const isDescriptionObj = (x: unknown): x is DescriptionObj => {
+	return (
+		typeof x === 'object' && x !== null && 'noExerpt' in x && 'content' in x
+	)
+}
+
 export type Project = {
 	key: string
 	name: string
@@ -69,7 +92,7 @@ export type Project = {
 	printHide?: boolean
 	type?: string
 	dates: string
-	description: ReactNode[]
+	description: Description[]
 	technologies: string[]
 	images?: ImageItem[]
 }
@@ -261,6 +284,28 @@ export const experiments: Project[] = [
 		dates: '2023 - 2025',
 		description: [
 			'A code generator that generates a GraphQL API based on a database schema that you design in a visual editor. It is a browser-based application, but it works by writing files to your file system, so you can view/edit the generated code from your local editor. It comes with built-in support for docker, database migrations, emails, authentication, monorepos and more.',
+			{
+				noExerpt: true,
+				content: (
+					<>
+						Using the FileSystem API to write files to a local
+						directory made a lot of sense to me, as it allows the
+						user to view/edit the generated code from their local
+						editor, and it also fits in with version control.
+						Originally I had toyed with using a combination of an{' '}
+						<Link href="https://github.com/jvilk/BrowserFS">
+							in-memory virtual file system
+						</Link>{' '}
+						and{' '}
+						<Link href="https://isomorphic-git.org/en/">
+							isomorphic git
+						</Link>{' '}
+						to read/write to a remote git repo, but I found that it
+						was too much of a headache to get working, and
+						ultimately less useful than just writing files.
+					</>
+				),
+			},
 		],
 		technologies: [
 			'React',
@@ -387,7 +432,11 @@ export const experiments: Project[] = [
 		type: '',
 		description: [
 			'An interactive browser version of the "tower table" from the game Element TD 2. It allows you to pre-plan your element picks outside of the game and see how the build will develop over the course of the game.',
-			'I just made it for a bit of fun, and the logic needed to determine which towers are dependent on each other was more complex than I expected, and pretty fun to figure out. I also added an overlay that explains which towers are dependents, which was a fun SVG challenge.',
+			{
+				noExerpt: true,
+				content:
+					'I just made it for a bit of fun, and the logic needed to determine which towers are dependent on each other was more complex than I expected, and pretty fun to figure out. I also added an overlay that explains which towers are dependents, which was a fun SVG challenge.',
+			},
 		],
 		technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'SVG'],
 		images: [

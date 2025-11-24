@@ -43,6 +43,7 @@ export default function RootLayout({
 				<ThemeProvider>
 					<div className="relative min-h-screen p-6 sm:p-20 sm:pb-0 print:p-0">
 						<Glow />
+						{/* <Starfield /> */}
 
 						<main className="print:max-w-auto mx-auto flex max-w-2xl flex-col gap-8 print:mx-0 print:gap-8">
 							<Header />

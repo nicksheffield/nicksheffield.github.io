@@ -7,6 +7,7 @@ export const Topo = ({ className }: { className?: string }) => {
 	const [mounted, setMounted] = useState(false)
 
 	useEffect(() => {
+		// eslint-disable-next-line react-hooks/set-state-in-effect
 		setMounted(true)
 	}, [])
 
@@ -18,9 +19,9 @@ export const Topo = ({ className }: { className?: string }) => {
 			y="0px"
 			viewBox="0 0 750 500"
 			id="ants"
+			data-mounted={mounted ? '' : undefined}
 			className={cn(
-				'opacity-0 transition-opacity duration-1000',
-				mounted && 'opacity-100',
+				'opacity-0 transition-opacity duration-1000 data-mounted:opacity-100',
 				className,
 			)}
 			preserveAspectRatio="xMinYMin slice"

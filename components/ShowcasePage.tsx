@@ -8,7 +8,7 @@ import {
 	CarouselNext,
 	CarouselPrevious,
 } from '@/components/ui/carousel'
-import { Project } from '@/lib/data'
+import { isDescriptionObj, Project } from '@/lib/data'
 import { ArrowLeftIcon, ExternalLinkIcon } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -56,7 +56,7 @@ export const ShowcasePage = ({ project }: { project: Project }) => {
 			<div className="flex flex-col gap-6">
 				{project?.description.map((x, i) => (
 					<p key={i} className="text-muted-foreground leading-7">
-						{x}
+						{isDescriptionObj(x) ? x.content : x}
 					</p>
 				))}
 			</div>
