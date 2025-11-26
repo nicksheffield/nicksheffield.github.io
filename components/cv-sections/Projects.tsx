@@ -1,9 +1,11 @@
 import { Section, SectionBody, SectionHeading } from '@/components/Section'
 import { buttonVariants } from '@/components/ui/button'
-import { isDescriptionObj, Project, projects } from '@/lib/data'
+import { projects } from '@/lib/db/projects'
+import type { Project } from '@/lib/types'
 import { cn } from '@/lib/utils'
 import { ChevronRightIcon } from 'lucide-react'
 import Link from 'next/link'
+import ReactMarkdown from 'react-markdown'
 
 export const Projects = () => {
 	return (
@@ -13,7 +15,7 @@ export const Projects = () => {
 			</SectionHeading>
 
 			<SectionBody className="gap-16 print:gap-6">
-				{projects.map((project) => (
+				{Object.values(projects).map((project) => (
 					<ProjectsItem key={project.name} project={project} />
 				))}
 			</SectionBody>
@@ -44,20 +46,10 @@ export const ProjectsItem = ({ project }: { project: Project }) => {
 					</div>
 				</div>
 
-				<div className="text-muted-foreground relative z-10 mt-2 flex flex-col gap-3 text-sm leading-6 text-pretty print:text-xs print:leading-normal print:opacity-70">
-					{project.description
-						.filter((x) => {
-							return !isDescriptionObj(x) || !x.noExerpt
-						})
-						.map((x, i) => (
-							<p
-								key={i}
-								data-not-first={i !== 0 ? '' : undefined}
-								className="data-not-first:print:hidden"
-							>
-								{isDescriptionObj(x) ? x.content : x}
-							</p>
-						))}
+				<div className="text-muted-foreground relative z-10 mt-2 flex flex-col gap-3 text-sm leading-6 text-pretty print:text-xs print:leading-normal print:opacity-70 [&_p:not(:first-child)]:print:hidden">
+					{project.excerpt && (
+						<ReactMarkdown>{project.excerpt}</ReactMarkdown>
+					)}
 				</div>
 
 				<div className="mt-4 flex flex-col justify-between gap-4 sm:flex-row print:hidden">

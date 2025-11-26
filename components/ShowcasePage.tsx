@@ -1,5 +1,3 @@
-'use client'
-
 import { buttonVariants } from '@/components/ui/button'
 import {
 	Carousel,
@@ -8,33 +6,18 @@ import {
 	CarouselNext,
 	CarouselPrevious,
 } from '@/components/ui/carousel'
-import { isDescriptionObj, Project } from '@/lib/data'
-import { ArrowLeftIcon, ExternalLinkIcon } from 'lucide-react'
-import Link from 'next/link'
+import { Project } from '@/lib/types'
+import { ExternalLinkIcon } from 'lucide-react'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
-import { cn } from '@/lib/utils'
+import { BackButton } from '@/components/BackButton'
+import ReactMarkdown from 'react-markdown'
 
 export const ShowcasePage = ({ project }: { project: Project }) => {
-	const router = useRouter()
-
 	return (
 		<div className="mt-8 flex flex-col gap-8">
 			<div className="flex items-center justify-between">
 				<div className="flex items-center gap-4">
-					<Link
-						href="/"
-						onClick={router.back}
-						className={cn(
-							buttonVariants({
-								variant: 'secondary',
-								size: 'icon',
-							}),
-							'rounded-full',
-						)}
-					>
-						<ArrowLeftIcon className="size-4" />
-					</Link>
+					<BackButton />
 					<div className="text-2xl font-semibold">
 						{project?.name}
 					</div>
@@ -54,11 +37,14 @@ export const ShowcasePage = ({ project }: { project: Project }) => {
 			</div>
 
 			<div className="flex flex-col gap-6">
-				{project?.description.map((x, i) => (
+				{project.description && (
+					<ReactMarkdown>{project.description}</ReactMarkdown>
+				)}
+				{/* {project?.description.map((x, i) => (
 					<p key={i} className="text-muted-foreground leading-7">
 						{isDescriptionObj(x) ? x.content : x}
 					</p>
-				))}
+				))} */}
 			</div>
 
 			{(project.images?.length || 0) > 0 && (

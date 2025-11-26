@@ -1,9 +1,8 @@
 import { Section, SectionBody, SectionHeading } from '@/components/Section'
-import {
-	workExperiences,
-	type WorkExperience as WorkExperienceType,
-} from '@/lib/data'
+import { work } from '@/lib/db/work-experience'
+import type { WorkExperience as WorkExperienceType } from '@/lib/types'
 import { format } from 'date-fns'
+import ReactMarkdown from 'react-markdown'
 
 export const WorkExperience = () => {
 	return (
@@ -13,11 +12,11 @@ export const WorkExperience = () => {
 			</SectionHeading>
 
 			<SectionBody className="print:gap-6">
-				{workExperiences.map((experience, i) => (
+				{Object.values(work).map((experience, i, a) => (
 					<WorkExperienceItem
 						key={experience.company}
 						experience={experience}
-						isLast={i === workExperiences.length - 1}
+						isLast={i === a.length - 1}
 					/>
 				))}
 			</SectionBody>
@@ -72,16 +71,11 @@ const WorkExperienceItem = ({
 							</div>
 						</div>
 
-						<ul className="order-4 flex list-outside list-disc flex-col gap-2 pl-4 print:mt-2 print:gap-0 print:opacity-70">
-							{experience.descriptions.map((description) => (
-								<li
-									key={description}
-									className="text-muted-foreground text-sm leading-6 text-pretty print:text-xs print:leading-normal"
-								>
-									{description}
-								</li>
-							))}
-						</ul>
+						<div className="[&_li]:text-muted-foreground [&_li]:text-sm [&_li]:leading-6 [&_li]:text-pretty [&_li]:print:text-xs [&_li]:print:leading-normal [&_ul]:order-4 [&_ul]:flex [&_ul]:list-outside [&_ul]:list-disc [&_ul]:flex-col [&_ul]:gap-2 [&_ul]:pl-4 [&_ul]:print:mt-2 [&_ul]:print:gap-0 [&_ul]:print:opacity-70">
+							<ReactMarkdown>
+								{experience.description}
+							</ReactMarkdown>
+						</div>
 					</div>
 				</div>
 			</div>

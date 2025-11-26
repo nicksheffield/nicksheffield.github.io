@@ -1,5 +1,15 @@
 import { Section, SectionHeading } from '@/components/Section'
-import { skills } from '@/lib/data'
+
+const skills: string[] = [
+	'React',
+	'TypeScript',
+	'Node.js',
+	'Hono',
+	'GraphQL',
+	'Next.js',
+	'Tailwind CSS',
+	'Git',
+]
 
 export const Skills = () => {
 	return (
