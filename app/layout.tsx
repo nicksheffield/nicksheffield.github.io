@@ -4,7 +4,6 @@ import { Header } from '@/components/cv-sections/Header'
 import { Footer } from '@/components/cv-sections/Footer'
 import { Glow } from '@/components/Glow'
 import { Inter } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const inter = Inter({
@@ -54,8 +53,6 @@ export default function RootLayout({
 						</main>
 					</div>
 				</ThemeProvider>
-
-				<Analytics />
 			</body>
 		</html>
 	)
