@@ -69,7 +69,7 @@ export const ShowcasePage = ({ project }: { project: Project }) => {
 												alt={image.alt}
 												width={image.width}
 												height={image.height}
-												className="ring-border overflow-hidden rounded-md ring-1"
+												className="ring-border overflow-hidden ring-1"
 											/>
 										</a>
 

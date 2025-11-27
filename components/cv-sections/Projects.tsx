@@ -30,7 +30,9 @@ export const ProjectsItem = ({ project }: { project: Project }) => {
 			data-print-hide={project.printHide ? '' : undefined}
 			className="group/block relative flex break-inside-avoid flex-col gap-y-2 data-print-hide:print:hidden"
 		>
-			<div className="bg-muted/0 group-hover/block:bg-muted/50 pointer-events-none absolute -inset-x-5 -inset-y-4 -z-10 scale-90 rounded-2xl transition-[background-color,scale] group-hover/block:scale-100 print:hidden" />
+			{/* <div className="bg-muted/0 group-hover/block:bg-muted/50 pointer-events-none absolute -inset-x-5 -inset-y-4 -z-10 scale-90 rounded-2xl transition-[background-color,scale] group-hover/block:scale-100 print:hidden" /> */}
+
+			<div className="bg-muted/0 group-hover/block:bg-muted/50 pointer-events-none absolute -inset-4 -z-10 scale-95 rounded-4xl transition-[background-color,scale] [corner-shape:superellipse(2)] not-supports-corner-shape:rounded-md group-hover/block:scale-100 print:hidden" />
 
 			<div className="flex flex-col gap-0">
 				<div className="flex items-center gap-3.5 print:text-xs">

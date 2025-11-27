@@ -56,7 +56,7 @@ export function ThemeToggle() {
 				mounted ? `Switch to ${otherTheme} theme` : 'Toggle theme'
 			}
 			onClick={() => setTheme(otherTheme)}
-			className="relative flex flex-col items-stretch justify-start gap-0 rounded-xl [corner-shape:superellipse(1.5)]"
+			className="relative flex flex-col items-stretch justify-start gap-0 rounded-2xl [corner-shape:superellipse(2)] not-supports-corner-shape:rounded-md"
 		>
 			<span className="absolute -inset-3 pointer-fine:hidden" />
 
