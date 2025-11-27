@@ -7,17 +7,30 @@ import {
 	CarouselPrevious,
 } from '@/components/ui/carousel'
 import { Project } from '@/lib/types'
-import { ExternalLinkIcon } from 'lucide-react'
+import { ExternalLinkIcon, ArrowLeftIcon } from 'lucide-react'
 import Image from 'next/image'
-import { BackButton } from '@/components/BackButton'
+import { BackLink } from '@/components/BackLink'
 import ReactMarkdown from 'react-markdown'
+import { cn } from '@/lib/utils'
 
 export const ShowcasePage = ({ project }: { project: Project }) => {
 	return (
 		<div className="mt-8 flex flex-col gap-8">
 			<div className="flex items-center justify-between">
 				<div className="flex items-center gap-4">
-					<BackButton />
+					<BackLink
+						className={cn(
+							buttonVariants({
+								variant: 'secondary',
+								size: 'icon',
+								className: 'rounded-full',
+							}),
+							'rounded-full',
+						)}
+					>
+						<ArrowLeftIcon />
+					</BackLink>
+
 					<div className="text-2xl font-semibold">
 						{project?.name}
 					</div>
@@ -36,15 +49,10 @@ export const ShowcasePage = ({ project }: { project: Project }) => {
 				)}
 			</div>
 
-			<div className="flex flex-col gap-6">
+			<div className="[&_p]:text-muted-foreground flex flex-col gap-6 [&_p]:leading-7">
 				{project.description && (
 					<ReactMarkdown>{project.description}</ReactMarkdown>
 				)}
-				{/* {project?.description.map((x, i) => (
-					<p key={i} className="text-muted-foreground leading-7">
-						{isDescriptionObj(x) ? x.content : x}
-					</p>
-				))} */}
 			</div>
 
 			{(project.images?.length || 0) > 0 && (
