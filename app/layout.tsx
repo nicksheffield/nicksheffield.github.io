@@ -3,18 +3,19 @@ import { ThemeProvider } from '@/components/ThemeProvider'
 import { Header } from '@/components/cv-sections/Header'
 import { Footer } from '@/components/cv-sections/Footer'
 import { Glow } from '@/components/Glow'
-import { Inter } from 'next/font/google'
+// import { Inter } from 'next/font/google'
+import { GeistSans } from 'geist/font/sans'
 import './globals.css'
 
-const inter = Inter({
-	weight: [
-		'400', // normal
-		'500', // medium
-		'600', // semibold
-		'700', // bold
-	],
-	subsets: ['latin'],
-})
+// const inter = Inter({
+// 	weight: [
+// 		'400', // normal
+// 		'500', // medium
+// 		'600', // semibold
+// 		'700', // bold
+// 	],
+// 	subsets: ['latin'],
+// })
 
 export const metadata: Metadata = {
 	title: "Nick Sheffield's CV",
@@ -27,7 +28,11 @@ type RootLayoutProps = Readonly<{
 
 export default function RootLayout({ children }: RootLayoutProps) {
 	return (
-		<html lang="en" className={inter.className} suppressHydrationWarning>
+		<html
+			lang="en"
+			className={GeistSans.className}
+			suppressHydrationWarning
+		>
 			<head>
 				<link
 					rel="icon"
