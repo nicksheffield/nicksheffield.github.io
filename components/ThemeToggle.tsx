@@ -1,8 +1,14 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 import { useTheme } from 'next-themes'
-import { useEffect, useState, type ComponentPropsWithoutRef } from 'react'
+import {
+	ComponentProps,
+	useEffect,
+	useState,
+	type ComponentPropsWithoutRef,
+} from 'react'
 
 function SunIcon(props: ComponentPropsWithoutRef<'svg'>) {
 	return (
@@ -36,7 +42,7 @@ function MoonIcon(props: ComponentPropsWithoutRef<'svg'>) {
 	)
 }
 
-export function ThemeToggle() {
+export function ThemeToggle({ className, ...props }: ComponentProps<'button'>) {
 	const { resolvedTheme, setTheme } = useTheme()
 	const otherTheme = resolvedTheme === 'dark' ? 'light' : 'dark'
 	const [mounted, setMounted] = useState(false)
@@ -56,7 +62,11 @@ export function ThemeToggle() {
 				mounted ? `Switch to ${otherTheme} theme` : 'Toggle theme'
 			}
 			onClick={() => setTheme(otherTheme)}
-			className="relative flex flex-col items-stretch justify-start gap-0 rounded-2xl [corner-shape:superellipse(2)] not-supports-corner-shape:rounded-md"
+			className={cn(
+				'relative flex flex-col items-stretch justify-start gap-0',
+				className,
+			)}
+			{...props}
 		>
 			<span className="absolute -inset-3 pointer-fine:hidden" />
 

@@ -27,7 +27,7 @@ import { Section, SectionBody } from '@/components/Section'
 
 export const About = () => {
 	return (
-		<Section className="gap-2">
+		<Section className="-mt-10 gap-2 sm:mt-0">
 			<h2 className="hidden text-sm font-medium print:block">About</h2>
 
 			<SectionBody className="gap-6 leading-7 text-pretty print:gap-2 print:text-xs print:leading-normal print:opacity-70">

@@ -17,11 +17,4 @@ export type Project = {
 	excerpt: string
 	description?: string
 	technologies: string[]
-	images?: {
-		src: string
-		alt: string
-		description: string[]
-		width: number
-		height: number
-	}[]
 }

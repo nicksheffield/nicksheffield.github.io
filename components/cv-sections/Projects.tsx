@@ -48,7 +48,7 @@ export const ProjectsItem = ({ project }: { project: Project }) => {
 					</div>
 				</div>
 
-				<div className="text-muted-foreground relative z-10 mt-2 flex flex-col gap-3 text-sm leading-6 text-pretty print:text-xs print:leading-normal print:opacity-70 [&_p:not(:first-child)]:print:hidden">
+				<div className="text-muted-foreground relative z-10 mt-2 flex flex-col gap-3 text-sm leading-6 text-pretty print:text-xs print:leading-normal print:opacity-70 [&_p]:leading-6 print:[&_p]:leading-normal [&_p:not(:first-child)]:print:hidden">
 					{project.excerpt && (
 						<ReactMarkdown>{project.excerpt}</ReactMarkdown>
 					)}

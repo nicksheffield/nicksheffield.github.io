@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react'
+import { ComponentProps } from 'react'
 
 export const Topo = ({ className }: { className?: string }) => {
 	return (
@@ -489,10 +489,7 @@ export const Topo = ({ className }: { className?: string }) => {
 	)
 }
 
-const Path = ({
-	d,
-	...props
-}: HTMLAttributes<SVGPathElement> & { d: string }) => {
+const Path = ({ d, ...props }: ComponentProps<'path'> & { d: string }) => {
 	return (
 		<path
 			className="stroke-primary-600/50 dark:stroke-primary-600/20 fill-none"
