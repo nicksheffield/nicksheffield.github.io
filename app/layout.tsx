@@ -18,8 +18,8 @@ import './globals.css'
 // })
 
 export const metadata: Metadata = {
-	title: "Nick Sheffield's CV",
-	description: "Nick Sheffield's CV",
+	title: 'Nick Sheffield',
+	description: 'Nick Sheffield',
 }
 
 type RootLayoutProps = Readonly<{
